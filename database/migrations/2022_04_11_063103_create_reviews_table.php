@@ -15,6 +15,11 @@ class CreateReviewsTable extends Migration
     {
         Schema::create('reviews', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('order_id')->constrained('orders');
+            $table->foreignId('product_id')->constrained('products');
+            $table->foreignId('user_id')->constrained('user_jokis');
+            $table->string('status');
+            $table->text('review');
             $table->timestamps();
         });
     }
