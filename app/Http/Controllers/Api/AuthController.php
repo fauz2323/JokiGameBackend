@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\UserJoki;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
@@ -74,6 +75,16 @@ class AuthController extends Controller
         $user->currentAccessToken()->delete();
         return response()->json([
             'message' => 'logout success'
+        ], 200);
+    }
+
+    public function auth()
+    {
+        $user = Auth::user();
+
+        return response()->json([
+            'message' => 'success',
+            'data' => $user
         ], 200);
     }
 }
