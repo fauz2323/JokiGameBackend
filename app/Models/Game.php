@@ -8,4 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Game extends Model
 {
     use HasFactory;
+    protected $guarded = [];
+
+    /**
+     * Get all of the product for the Game
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function product()
+    {
+        return $this->hasMany(Product::class, 'game_id', 'id');
+    }
 }

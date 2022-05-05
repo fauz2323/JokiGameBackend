@@ -35,12 +35,12 @@
                     <h5 class="modal-title" id="exampleModalLabel">Game Add</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form action="" method="post">
+                <form action="{{ route('game-post') }}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="modal-body">
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">Game</label>
-                            <input type="email" name="game" class="form-control">
+                            <input type="text" name="game" class="form-control">
                         </div>
                         <div class="mb-3">
                             <label for="formFile" class="form-label">Image Game</label>

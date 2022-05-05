@@ -27,3 +27,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 //game
 Route::get('game-index', [GameAdminController::class, 'index'])->name('game-index');
+Route::post('game-post', [GameAdminController::class, 'add'])->name('game-post');
