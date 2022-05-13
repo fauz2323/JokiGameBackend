@@ -24,7 +24,7 @@ class GameAdminController extends Controller
             return DataTables::of($user)
                 ->addIndexColumn()
                 ->addColumn('action', function ($row) {
-                    $btn = '<a href="detail/' . $row->id . '/user" data-toggle="tooltip"  data-id="' . $row->id . '" data-original-title="Edit" class="edit btn btn-primary btn-sm editCustomer">Edit</a> | <a href="detail/' . $row->id . '/user" data-toggle="tooltip"  data-id="' . $row->id . '" data-original-title="Edit" class="edit btn btn-danger btn-sm editCustomer">Delete</a>';
+                    $btn = '<a href="game-edit/' . Crypt::encrypt($row->id) . '" data-toggle="tooltip"  data-id="' . $row->id . '" data-original-title="Edit" class="edit btn btn-primary btn-sm editCustomer">Edit</a> | <a href="game-delete/' . Crypt::encrypt($row->id) . '" data-toggle="tooltip"  data-id="' . $row->id . '" data-original-title="Edit" class="edit btn btn-danger btn-sm editCustomer">Delete</a>';
                     return $btn;
                 })
                 ->rawColumns(['action'])
@@ -66,7 +66,7 @@ class GameAdminController extends Controller
             'game' => 'required',
         ]);
 
-        $data = Game::find(Crypt::encrypt($id));
+        $data = Game::find($id);
 
         if ($request->file('image')) {
             Storage::delete($data->ImagePath);
@@ -77,19 +77,20 @@ class GameAdminController extends Controller
                 'ImagePath' => $path
             ]);
 
-            return redirect()->back();
+            return redirect()->route('game-index');
         }
 
         $data->update([
             'name' => $request->game,
         ]);
 
-        return redirect()->back();
+        return redirect()->route('game-index');
     }
 
     public function editView($id)
     {
-        $data = Game::find(Crypt::encrypt($id));
+        $data = Game::find(Crypt::decrypt($id));
+
         return view('admin.category.edit', compact('data'));
     }
 }

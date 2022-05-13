@@ -17,6 +17,6 @@ class Product extends Model
      */
     public function game()
     {
-        return $this->hasOne(Game::class, 'game_id', 'id');
+        return $this->belongsTo(Game::class, 'game_id', 'id');
     }
 }

@@ -162,25 +162,13 @@
                             </a>
                             <ul class="sub-menu" aria-expanded="false">
                                 <li><a href="{{ route('game-index') }}">Game List</a></li>
+                                <li><a href="{{ route('product-index') }}">Product List</a></li>
                             </ul>
+
                         </li>
 
                         <li class="menu-title">Settings</li>
-                        <li>
-                            <a href="" class="waves-effect">
-                                <i class="mdi mdi-dice-5"></i><span>Log Games</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                <i class="fas fa-cog"></i>
-                                <span>Dice Setting</span>
-                            </a>
-                            <ul class="sub-menu" aria-expanded="false">
-                                <li><a href="">Wallet Setting</a></li>
-                                <li><a href="">Apps Setting</a></li>
-                            </ul>
-                        </li>
+
 
                     </ul>
                 </div>
