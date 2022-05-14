@@ -20,4 +20,14 @@ class UserJoki extends Model
     {
         return $this->hasOne(BalanceUser::class, 'user_id', 'id');
     }
+
+    /**
+     * Get all of the topUp for the UserJoki
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function topUp()
+    {
+        return $this->hasMany(TopUp::class, 'id_akun', 'id');
+    }
 }

@@ -26,6 +26,7 @@ class TopUpController extends Controller
         $codeUniq = rand(100, 999);
 
         $data = TopUp::create([
+            'id_akun' => $auth->id,
             'codeUniq' => $codeUniq,
             'total' => $request->total,
             'ket' => $request->ket,

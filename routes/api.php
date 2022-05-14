@@ -21,17 +21,19 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+
+
 Route::post('register', [AuthController::class, 'register']);
 Route::post('login', [AuthController::class, 'login']);
 
 Route::middleware(['auth:sanctum'])->group(function () {
     Route::get('auth', [AuthController::class, 'auth']);
+
+    //topup
+    Route::get('topup-list', [TopUpController::class, 'all']);
+    Route::post('topup', [TopUpController::class, 'topUp']);
+    Route::post('upload-bukti', [TopUpController::class, 'upload']);
 });
 
 Route::get('game', [GameController::class, 'gameList']);
 Route::post('product-list', [GameController::class, 'product']);
-
-//topup
-Route::get('topup-list', [TopUpController::class, 'all']);
-Route::post('topup', [TopUpController::class, 'topUp']);
-Route::post('upload-bukti', [TopUpController::class, 'upload']);
