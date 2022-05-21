@@ -34,6 +34,10 @@ class AuthController extends Controller
                     'phone' => $request->phone,
                 ]);
 
+                $user->balance()->create([
+                    'balance' => 0
+                ]);
+
                 $token = $user->createToken('user_token')->plainTextToken;
 
                 return response()->json([
@@ -84,7 +88,10 @@ class AuthController extends Controller
 
         return response()->json([
             'message' => 'success',
-            'data' => $user
+            'name' => $user->username,
+            'data' => [
+                'balance' => $user->balance->balance
+            ]
         ], 200);
     }
 }

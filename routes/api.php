@@ -33,7 +33,8 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::get('topup-list', [TopUpController::class, 'all']);
     Route::post('topup', [TopUpController::class, 'topUp']);
     Route::post('upload-bukti', [TopUpController::class, 'upload']);
-});
 
-Route::get('game', [GameController::class, 'gameList']);
-Route::post('product-list', [GameController::class, 'product']);
+    //Game
+    Route::get('game', [GameController::class, 'gameList']);
+    Route::post('product-list', [GameController::class, 'product']);
+});
