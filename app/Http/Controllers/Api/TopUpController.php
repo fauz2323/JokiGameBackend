@@ -21,6 +21,18 @@ class TopUpController extends Controller
         ], 200);
     }
 
+    public function allPending()
+    {
+        $data = TopUp::where([
+            'id_akun' => Auth::user()->id,
+            'status' => 'pending'
+        ])->get();
+
+        return response()->json([
+            'data' => $data,
+        ], 200);
+    }
+
     public function topUp(Request $request)
     {
         $auth = Auth::user();

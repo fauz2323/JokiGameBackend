@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\GameAdminController;
 use App\Http\Controllers\Admin\ProductAdminCOntroller;
+use App\Http\Controllers\Admin\TopupControllerAdmin;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -39,3 +40,8 @@ Route::get('product-edit/{id}', [ProductAdminCOntroller::class, 'view'])->name('
 Route::get('product-delete/{id}', [ProductAdminCOntroller::class, 'delete'])->name('product-delete');
 Route::post('product-post', [ProductAdminCOntroller::class, 'add'])->name('product-post');
 Route::post('edit-post/{id}/product', [ProductAdminCOntroller::class, 'store'])->name('edit-post-product');
+
+//topup
+Route::get('topup-index', [TopupControllerAdmin::class, 'index'])->name('topup-index');
+Route::get('topup-detail/{id}', [TopupControllerAdmin::class, 'view'])->name('topup-detail');
+Route::get('topup-confirm/{id}', [TopupControllerAdmin::class, 'confirm'])->name('topup-confirm');

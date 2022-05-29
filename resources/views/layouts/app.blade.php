@@ -166,6 +166,11 @@
                             </ul>
 
                         </li>
+                        <li>
+                            <a href="{{ route('topup-index') }}" class="waves-effect">
+                                <i class="mdi mdi-home-variant-outline"></i><span>TopUp</span>
+                            </a>
+                        </li>
 
                         <li class="menu-title">Settings</li>
 

@@ -31,8 +31,9 @@ Route::middleware(['auth:sanctum'])->group(function () {
 
     //topup
     Route::get('topup-list', [TopUpController::class, 'all']);
+    Route::get('topup-allPending', [TopUpController::class, 'allPending']);
     Route::post('topup', [TopUpController::class, 'topUp']);
-    Route::post('upload-bukti', [TopUpController::class, 'upload']);
+    Route::post('upload-bukti/{id}', [TopUpController::class, 'upload']);
 
     //Game
     Route::get('game', [GameController::class, 'gameList']);
