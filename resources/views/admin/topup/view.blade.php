@@ -41,7 +41,7 @@
                             </tbody>
                         </table>
                         <a href="{{ route('topup-confirm', $topup->id) }}"
-                            class="btn btn-primary waves-effect waves-light">Button</a>
+                            class="btn btn-primary waves-effect waves-light">Confirm</a>
                     </div>
                 </div>
             </div>
