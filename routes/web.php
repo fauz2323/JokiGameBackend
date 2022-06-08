@@ -40,6 +40,9 @@ Route::get('product-edit/{id}', [ProductAdminCOntroller::class, 'view'])->name('
 Route::get('product-delete/{id}', [ProductAdminCOntroller::class, 'delete'])->name('product-delete');
 Route::post('product-post', [ProductAdminCOntroller::class, 'add'])->name('product-post');
 Route::post('edit-post/{id}/product', [ProductAdminCOntroller::class, 'store'])->name('edit-post-product');
+Route::get('product-detail/{id}', [ProductAdminCOntroller::class, 'viewDetail'])->name('product-View');
+Route::get('delete-portofolio/{id}', [ProductAdminCOntroller::class, 'deletePorto'])->name('delete-portofolio');
+Route::post('add-portofolio/{id}', [ProductAdminCOntroller::class, 'portofolio'])->name('add-portofolio');
 
 //topup
 Route::get('topup-index', [TopupControllerAdmin::class, 'index'])->name('topup-index');

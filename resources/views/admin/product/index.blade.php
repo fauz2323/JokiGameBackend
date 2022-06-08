@@ -38,7 +38,7 @@
                     <h5 class="modal-title" id="exampleModalLabel">Game Add</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form action="{{ route('product-post') }}" method="post">
+                <form action="{{ route('product-post') }}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="modal-body">
                         <div class="mb-3">
@@ -62,6 +62,27 @@
                             <label for="exampleFormControlInput1" class="form-label">Harga</label>
                             <input type="text" name="price" class="form-control">
                         </div>
+                        <div class="mb-3">
+                            <div class="form-group increment">
+                                <label for="">file berkas</label>
+                                <div class="input-group">
+                                    <input type="file" name="image[]" class="form-control">
+                                    <div class="input-group-append">
+                                        <button type="button" class="btn btn-outline-primary btn-add"><i
+                                                class="fas fa-plus-square"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clone invisible">
+                                <div class="input-group mt-2">
+                                    <input type="file" name="image[]" class="form-control">
+                                    <div class="input-group-append">
+                                        <button type="button" class="btn btn-outline-danger btn-remove"><i
+                                                class="fas fa-minus-square"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
                     </div>
                     <div class="modal-footer">
@@ -75,7 +96,19 @@
     </div>
 @endsection
 
-
+@push('script')
+    <script>
+        jQuery(document).ready(function() {
+            jQuery(".btn-add").click(function() {
+                let markup = jQuery(".invisible").html();
+                jQuery(".increment").append(markup);
+            });
+            jQuery("body").on("click", ".btn-remove", function() {
+                jQuery(this).parents(".input-group").remove();
+            })
+        })
+    </script>
+@endpush
 
 @push('script')
     <script>

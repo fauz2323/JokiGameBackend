@@ -19,4 +19,24 @@ class Product extends Model
     {
         return $this->belongsTo(Game::class, 'game_id', 'id');
     }
+
+    /**
+     * Get all of the image for the Product
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function image()
+    {
+        return $this->hasMany(ProductImage::class, 'id_product', 'id');
+    }
+
+    /**
+     * Get all of the portofolio for the Product
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function portofolio()
+    {
+        return $this->hasMany(Portofolio::class, 'id_product', 'id');
+    }
 }

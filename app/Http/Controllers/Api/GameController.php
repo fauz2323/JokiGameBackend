@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Game;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class GameController extends Controller
@@ -24,6 +25,28 @@ class GameController extends Controller
         return response()->json([
             'game' => $data->name,
             'list' => $data->product,
+        ], 200);
+    }
+
+    public function productDetail(Request $request)
+    {
+        $data = Product::find($request->id);
+
+        return response()->json([
+            'product' => $data->productName,
+            'data' => $data,
+            'portopolio' => $data->portofolio
+        ], 200);
+    }
+
+
+
+    public function productAll()
+    {
+        $data = Game::all();
+        return response()->json([
+            'game' => 'all',
+            'list' => $data,
         ], 200);
     }
 }
