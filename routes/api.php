@@ -39,4 +39,9 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::get('game', [GameController::class, 'gameList']);
     Route::post('product-list', [GameController::class, 'product']);
     Route::get('product-all', [GameController::class, 'productAll']);
+
+    //product
+    Route::post('detail-product', [GameController::class, 'productDetail']);
+    Route::post('detail-product-porto', [GameController::class, 'getPortofolio']);
+    Route::post('detail-product-getImage', [GameController::class, 'getImage']);
 });
