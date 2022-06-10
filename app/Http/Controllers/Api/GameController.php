@@ -34,9 +34,11 @@ class GameController extends Controller
     public function productDetail(Request $request)
     {
         $data = Product::find($request->id);
+        $etalase = Game::find($data->game_id);
 
         return response()->json([
             'data' => $data,
+            'game' => $etalase->name,
         ], 200);
     }
 
@@ -48,7 +50,7 @@ class GameController extends Controller
             $porto = ['path' => '-'];
             return response()->json([
                 'data' => '-',
-                'porto' => $porto,
+                'porto' => [$porto],
             ], 200);
         } else {
             return response()->json([

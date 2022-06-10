@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\Order;
 use App\Models\Product;
-use App\Models\User;
+use App\Models\UserJoki;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -15,13 +15,13 @@ class OrderApiController extends Controller
     {
         $product = Product::find($request->id_product);
         if ($product) {
-            $user = User::find(Auth::user()->id);
+            $user = UserJoki::find(Auth::user()->id);
             $user->balance->balance = $user->balance->balance - $product->price;
             $user->balance->save();
 
             $order = Order::create([
                 'product_id' => $request->id_product,
-                'user_id' => Auth::user()->id,
+                'user_id' => $user->id,
                 'note' => $request->note,
                 'price' => $product->price,
                 'status' => 'Diproses',
