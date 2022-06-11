@@ -22,11 +22,15 @@ class GameController extends Controller
 
     public function product(Request $request)
     {
-        $data = Game::where('name', $request->game)->first();
-        $list = Product::where('game_id', $data->id)->with('image')->get();
+        if ($request->game == 'all') {
+            $list = Product::with('image')->get();
+        } else {
+            $data = Game::where('name', $request->game)->first();
+            $list = Product::where('game_id', $data->id)->with('image')->get();
+        }
 
         return response()->json([
-            'game' => $data->name,
+            'game' => $request->game,
             'list' => $list,
         ], 200);
     }
@@ -78,6 +82,8 @@ class GameController extends Controller
         }
     }
 
+
+    //disable
     public function productAll()
     {
         $data = Game::all();

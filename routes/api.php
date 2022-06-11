@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\GameController;
+use App\Http\Controllers\Api\OrderApiController;
 use App\Http\Controllers\Api\TopUpController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -38,10 +39,14 @@ Route::middleware(['auth:sanctum'])->group(function () {
     //Game
     Route::get('game', [GameController::class, 'gameList']);
     Route::post('product-list', [GameController::class, 'product']);
-    Route::get('product-all', [GameController::class, 'productAll']);
+    // Route::get('product-all', [GameController::class, 'productAll']);
 
     //product
     Route::post('detail-product', [GameController::class, 'productDetail']);
     Route::post('detail-product-porto', [GameController::class, 'getPortofolio']);
     Route::post('detail-product-getImage', [GameController::class, 'getImage']);
+
+    //order
+    Route::post('make-order', [OrderApiController::class, 'makeOrder']);
+    Route::get('list-order', [OrderApiController::class, 'orderList']);
 });

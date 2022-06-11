@@ -14,8 +14,15 @@ class OrderApiController extends Controller
     public function makeOrder(Request $request)
     {
         $product = Product::find($request->id_product);
+        $user = UserJoki::find(Auth::user()->id);
+
         if ($product) {
-            $user = UserJoki::find(Auth::user()->id);
+
+            if ($user->balance->balance <= $product->price) {
+                return response()->json([
+                    'status' => 'insufficient balance',
+                ], 201);
+            }
             $user->balance->balance = $user->balance->balance - $product->price;
             $user->balance->save();
 
@@ -24,7 +31,7 @@ class OrderApiController extends Controller
                 'user_id' => $user->id,
                 'note' => $request->note,
                 'price' => $product->price,
-                'status' => 'Diproses',
+                'status' => 'menunggu',
             ]);
 
             return response()->json([
@@ -43,7 +50,7 @@ class OrderApiController extends Controller
 
     public function orderList()
     {
-        $order = Order::where('user_id', Auth::user()->id)->get();
+        $order = Order::where('user_id', Auth::user()->id)->with('product')->get();
         return response()->json([
             'status' => 'success',
             'orderList' => $order,

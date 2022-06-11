@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\GameAdminController;
+use App\Http\Controllers\Admin\OrderAdminController;
 use App\Http\Controllers\Admin\ProductAdminCOntroller;
 use App\Http\Controllers\Admin\TopupControllerAdmin;
 use Illuminate\Support\Facades\Route;
@@ -48,3 +49,8 @@ Route::post('add-portofolio/{id}', [ProductAdminCOntroller::class, 'portofolio']
 Route::get('topup-index', [TopupControllerAdmin::class, 'index'])->name('topup-index');
 Route::get('topup-detail/{id}', [TopupControllerAdmin::class, 'view'])->name('topup-detail');
 Route::get('topup-confirm/{id}', [TopupControllerAdmin::class, 'confirm'])->name('topup-confirm');
+
+//order
+Route::get('order-index', [OrderAdminController::class, 'index'])->name('order-index');
+Route::get('order-detail/{id}', [OrderAdminController::class, 'detail']);
+Route::post('change-status/{id}', [OrderAdminController::class, 'changeStatus'])->name('changeStatus');

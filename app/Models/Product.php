@@ -39,4 +39,14 @@ class Product extends Model
     {
         return $this->hasMany(Portofolio::class, 'id_product', 'id');
     }
+
+    /**
+     * Get all of the order for the Product
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function order()
+    {
+        return $this->hasMany(Order::class, 'product_id', 'id');
+    }
 }

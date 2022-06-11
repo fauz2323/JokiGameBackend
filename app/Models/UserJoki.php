@@ -30,4 +30,14 @@ class UserJoki extends Model
     {
         return $this->hasMany(TopUp::class, 'id_akun', 'id');
     }
+
+    /**
+     * Get all of the order for the UserJoki
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function order()
+    {
+        return $this->hasMany(Order::class, 'user_id', 'id');
+    }
 }

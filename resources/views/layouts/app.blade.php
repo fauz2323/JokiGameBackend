@@ -171,6 +171,11 @@
                                 <i class="mdi mdi-home-variant-outline"></i><span>TopUp</span>
                             </a>
                         </li>
+                        <li>
+                            <a href="{{ route('order-index') }}" class="waves-effect">
+                                <i class="mdi mdi-home-variant-outline"></i><span>Order List</span>
+                            </a>
+                        </li>
 
                         <li class="menu-title">Settings</li>
 
