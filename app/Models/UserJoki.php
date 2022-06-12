@@ -40,4 +40,14 @@ class UserJoki extends Model
     {
         return $this->hasMany(Order::class, 'user_id', 'id');
     }
+
+    /**
+     * Get all of the message for the UserJoki
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function message()
+    {
+        return $this->hasMany(Message::class, 'user_id', 'id');
+    }
 }

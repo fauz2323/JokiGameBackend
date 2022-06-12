@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\GameAdminController;
+use App\Http\Controllers\Admin\MessageAdminController;
 use App\Http\Controllers\Admin\OrderAdminController;
 use App\Http\Controllers\Admin\ProductAdminCOntroller;
 use App\Http\Controllers\Admin\TopupControllerAdmin;
@@ -54,3 +55,6 @@ Route::get('topup-confirm/{id}', [TopupControllerAdmin::class, 'confirm'])->name
 Route::get('order-index', [OrderAdminController::class, 'index'])->name('order-index');
 Route::get('order-detail/{id}', [OrderAdminController::class, 'detail']);
 Route::post('change-status/{id}', [OrderAdminController::class, 'changeStatus'])->name('changeStatus');
+
+//message
+Route::get('message-index', [MessageAdminController::class, 'index'])->name('message-index');

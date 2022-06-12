@@ -56,4 +56,14 @@ class OrderApiController extends Controller
             'orderList' => $order,
         ], 200);
     }
+
+    public function orderDetail(Request $request)
+    {
+        $order = Order::where('id', $request->id)->with('user', 'product')->first();
+
+        return response()->json([
+            'status' => 'ok',
+            'orderList' => $order,
+        ], 200);
+    }
 }
