@@ -179,7 +179,7 @@
 
                         <li>
                             <a href="{{ route('message-index') }}" class="waves-effect">
-                                <i class="mdi mdi-home-variant-outline"></i><span>Order List</span>
+                                <i class="mdi mdi-home-variant-outline"></i><span>Message</span>
                             </a>
                         </li>
 
