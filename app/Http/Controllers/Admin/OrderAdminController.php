@@ -42,12 +42,14 @@ class OrderAdminController extends Controller
     public function changeStatus(Request $request, $id)
     {
         $order = Order::find($id);
-        $order->status = $request->status;
-        $order->save();
+        if ($order->status != 'selesai') {
+            $order->status = $request->status;
+            $order->save();
 
-        if ($order->status != 'selesai' || $order->status != 'dibatalkan') {
-            $order->user->balance->balance = $order->user->balance->balance + $order->price;
-            $order->user->balance->save();
+            if ($order->status != 'dibatalkan') {
+                $order->user->balance->balance = $order->user->balance->balance + $order->price;
+                $order->user->balance->save();
+            }
         }
 
         return redirect()->back();
