@@ -46,6 +46,7 @@ Route::get('product-detail/{id}', [ProductAdminCOntroller::class, 'viewDetail'])
 Route::get('delete-portofolio/{id}', [ProductAdminCOntroller::class, 'deletePorto'])->name('delete-portofolio');
 Route::post('add-portofolio/{id}', [ProductAdminCOntroller::class, 'portofolio'])->name('add-portofolio');
 
+
 //topup
 Route::get('topup-index', [TopupControllerAdmin::class, 'index'])->name('topup-index');
 Route::get('topup-detail/{id}', [TopupControllerAdmin::class, 'view'])->name('topup-detail');
@@ -58,3 +59,5 @@ Route::post('change-status/{id}', [OrderAdminController::class, 'changeStatus'])
 
 //message
 Route::get('message-index', [MessageAdminController::class, 'index'])->name('message-index');
+Route::get('view-message/{id}', [MessageAdminController::class, 'viewMessage'])->name('message-view');
+Route::post('send-message/{id}', [MessageAdminController::class, 'reply'])->name('message-reply');

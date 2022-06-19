@@ -50,4 +50,14 @@ class UserJoki extends Model
     {
         return $this->hasMany(Message::class, 'user_id', 'id');
     }
+
+    /**
+     * Get all of the review for the UserJoki
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function review()
+    {
+        return $this->hasMany(Review::class, 'user_id', 'id');
+    }
 }

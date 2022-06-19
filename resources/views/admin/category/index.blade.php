@@ -1,6 +1,18 @@
 @extends('layouts.app')
 
 @section('content')
+    <div class="main-container container-fluid">
+        <div class="page-header">
+            <h1 class="page-title">Category Menu</h1>
+            <div>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Category</li>
+                </ol>
+            </div>
+        </div>
+
+    </div>
     <div class="card shadow mb-4">
         <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-primary">Index Game</h6>

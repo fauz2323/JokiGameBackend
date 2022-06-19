@@ -40,8 +40,13 @@ class MessageAdminController extends Controller
     public function viewMessage($id)
     {
         $message = Message::where('user_id', Crypt::decrypt($id))->get();
+        $user = UserJoki::find(Crypt::decrypt($id));
+        foreach ($message as $key) {
+            $key->status = 'read';
+            $key->save();
+        }
 
-        return view();
+        return view('admin.message.view', compact('message', 'user'));
     }
 
     public function reply(Request $request, $id)

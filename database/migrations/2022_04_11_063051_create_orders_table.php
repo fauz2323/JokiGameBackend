@@ -20,6 +20,7 @@ class CreateOrdersTable extends Migration
             $table->text('note');
             $table->double('price');
             $table->string('status');
+            $table->string('review');
             $table->timestamps();
         });
     }

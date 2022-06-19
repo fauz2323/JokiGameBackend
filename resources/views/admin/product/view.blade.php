@@ -1,96 +1,163 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container mb-3">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    {{-- carousel --}}
-                    <div>
-                        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-
-                            <div class="carousel-inner">
-                                @foreach ($product->image as $key => $item)
-                                    <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
-                                        <img src="{{ url('/storage') . '/' . $item->path }}" class="d-block w-100"
-                                            alt="...">
+    <div class="row">
+        <div class="col-xl-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row row-sm">
+                        <div class="col-xl-5 col-lg-12 col-md-12">
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <div class="product-carousel">
+                                        <div id="Slider" class="carousel slide border" data-bs-ride="false">
+                                            <div class="carousel-inner">
+                                                @foreach ($product->image as $key => $item)
+                                                    <div class="carousel-item  {{ $key == 0 ? 'active' : '' }}"><img
+                                                            src="{{ url('/storage') . '/' . $item->path }}" alt="img"
+                                                            class="img-fluid mx-auto d-block">
+                                                        <div class="text-center mt-5 mb-5 btn-list">
+                                                        </div>
+                                                    </div>
+                                                @endforeach
+                                            </div>
+                                        </div>
                                     </div>
-                                @endforeach
+                                    <div class="clearfix carousel-slider">
+                                        <div id="thumbcarousel" class="carousel slide" data-bs-interval="t">
+                                            <div class="carousel-inner">
+                                                <ul class="carousel-item active">
+                                                    @php
+                                                        $number = 0;
+                                                    @endphp
+                                                    @foreach ($product->image as $item)
+                                                        <li data-bs-target="#Slider" data-bs-slide-to="{{ $number }}"
+                                                            class="thumb active m-2"><img
+                                                                src="{{ url('/storage') . '/' . $item->path }}"
+                                                                alt="img"></li>
+                                                        @php
+                                                            $number++;
+                                                        @endphp
+                                                    @endforeach
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-                                data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-                                data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
                         </div>
-                    </div>
-                    {{-- end carousel --}}
-                    <div class="card-body">
-                        <h4 class="card-title ">Product Detail</h4>
-                        <table class="table">
-                            <tbody>
-                                <tr>
-                                    <td>Product name</td>
-                                    <td>:</td>
-                                    <td>{{ $product->productName }}</td>
-                                </tr>
-                                <tr>
-                                    <td>Game</td>
-                                    <td>:</td>
-                                    <td>{{ $product->game->name }}</td>
-                                </tr>
-                                <tr>
-                                    <td>Price</td>
-                                    <td>:</td>
-                                    <td>{{ $product->price }}</td>
+                        <div class="details col-xl-7 col-lg-12 col-md-12 mt-4 mt-xl-0">
+                            <div class="mt-2 mb-4">
+                                <h3 class="mb-3 fw-semibold mb-5">{{ $product->productName }}</h3>
 
-                                </tr>
-                                <tr>
-                                    <td>Desc</td>
-                                    <td>:</td>
-                                    <td>{{ $product->desc }}</td>
 
-                                </tr>
-                                <tr>
-                                    <td>Create at</td>
-                                    <td>:</td>
-                                    <td>{{ $product->created_at }}</td>
+                                <h4 class="mt-4"><b> Description</b></h4>
+                                <p>{{ $product->desc }}</p>
+                                <h3 class="mb-4"><span class="me-2 fw-bold fs-25">{{ $product->price }}</span></h3>
 
-                                </tr>
-                            </tbody>
-                        </table>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                            Add portofolio
-                        </button>
+
+
+
+                                <hr>
+                                <div class="btn-list mt-4">
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal">
+                                        Add portofolio
+                                    </button>
+
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+        <div class="col-xl-12 col-md-12">
+            <div class="card productdesc">
+                <div class="card-body">
+                    <div class="panel panel-primary">
+                        <div class=" tab-menu-heading">
+                            <div class="tabs-menu1">
+                                <!-- Tabs -->
+                                <ul class="nav panel-tabs">
+                                    <li><a href="#tab5" class="active" data-bs-toggle="tab">Specifications</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="panel-body tabs-menu-body">
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="tab5">
+                                    <h4 class="mb-5 mt-3 fw-bold">Description :</h4>
 
-    <div class="container">
-        <h2 class="mb-3">Portofolio</h2>
-        <div class="row">
-            @foreach ($porto as $item)
-                <div class="col-md-4">
-                    <div class="card" style="width: 18rem;">
-                        <img src="{{ url('/storage') . '/' . $item->path }}" height="200px" class="card-img-top"
-                            alt="picture">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ $item->name }}</h5>
+                                    <p class="mb-3 fs-15">{{ $product->desc }}
+                                    </p>
 
-                            <a href="{{ route('delete-portofolio', $item->id) }}" class="btn btn-danger">Delete</a>
+
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            @endforeach
+            </div>
+        </div>
+
+
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">Reviews</div>
+                </div>
+                <div class="card-body">
+                    <div class="media mb-5">
+
+                        <div class="media-body">
+                            <h5 class="mt-0 mb-0">Gavin Murray</h5>
+                            <div class="text-warning mb-0">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-o"></i>
+                            </div>
+                            <p class="font-13 text-muted">Good Looking.........</p>
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+
+        <h3 class="p-3 mb-5">Portofolio</h3>
+        <div class="col-12">
+            <div class="row">
+                @foreach ($porto as $item)
+                    <div class="col-4">
+                        <div class="card">
+                            <div class="product-grid6">
+                                <div class="product-image6 p-5">
+                                    <img class="img-fluid br-7 w-100" src="{{ url('/storage') . '/' . $item->path }}"
+                                        alt="img">
+                                </div>
+                                <div class="card-body pt-0">
+                                    <div class="product-content text-center">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer text-center">
+                                <a href="{{ route('delete-portofolio', $item->id) }}"><button type="button"
+                                        class="btn btn-danger mb-1">Delete</button></a>
+
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
         </div>
     </div>
+
 
     {{-- modal --}}
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -100,7 +167,8 @@
                     <h5 class="modal-title" id="exampleModalLabel">Add portofolio</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form action="{{ route('add-portofolio', $product->id) }}" method="post" enctype="multipart/form-data">
+                <form action="{{ route('add-portofolio', $product->id) }}" method="post"
+                    enctype="multipart/form-data">
                     @csrf
                     <div class="modal-body">
                         <div class="mb-3">
@@ -133,18 +201,5 @@
 
             </div>
         </div>
-    @endsection
-
-    @push('script')
-        <script>
-            jQuery(document).ready(function() {
-                jQuery(".btn-add").click(function() {
-                    let markup = jQuery(".invisible").html();
-                    jQuery(".increment").append(markup);
-                });
-                jQuery("body").on("click", ".btn-remove", function() {
-                    jQuery(this).parents(".input-group").remove();
-                })
-            })
-        </script>
-    @endpush
+    </div>
+@endsection

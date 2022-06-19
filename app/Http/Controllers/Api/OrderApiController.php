@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\Order;
 use App\Models\Product;
+use App\Models\Review;
 use App\Models\UserJoki;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -64,6 +65,23 @@ class OrderApiController extends Controller
         return response()->json([
             'status' => 'ok',
             'orderList' => $order,
+        ], 200);
+    }
+
+    public function addReview(Request $request)
+    {
+        $order = Order::find($request->order_id);
+        $order->review = 'yes';
+        $order->save();
+        $review = Review::create([
+            'order_id' => $request->order_id,
+            'product_id' => $request->product_id,
+            'user_id' => Auth::user()->id,
+            'review' => $request->review,
+        ]);
+
+        return response()->json([
+            'status' => 'ok',
         ], 200);
     }
 }
