@@ -94,4 +94,27 @@ class AuthController extends Controller
             ]
         ], 200);
     }
+
+    public function getDataUser()
+    {
+        $user = Auth::user();
+
+        return response()->json([
+            'message' => 'success',
+            'balance' => $user->balance->balance,
+            'userData' => $user,
+        ], 200);
+    }
+
+    public function changePass(Request $request)
+    {
+        $user = UserJoki::find(Auth::user()->id);
+
+        $user->password = Hash::make($request->password);
+        $user->save();
+
+        return response()->json([
+            'message' => 'success',
+        ], 200);
+    }
 }

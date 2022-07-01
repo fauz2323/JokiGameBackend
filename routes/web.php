@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\GameAdminController;
 use App\Http\Controllers\Admin\MessageAdminController;
 use App\Http\Controllers\Admin\OrderAdminController;
 use App\Http\Controllers\Admin\ProductAdminCOntroller;
+use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\TopupControllerAdmin;
 use Illuminate\Support\Facades\Route;
 
@@ -61,3 +62,7 @@ Route::post('change-status/{id}', [OrderAdminController::class, 'changeStatus'])
 Route::get('message-index', [MessageAdminController::class, 'index'])->name('message-index');
 Route::get('view-message/{id}', [MessageAdminController::class, 'viewMessage'])->name('message-view');
 Route::post('send-message/{id}', [MessageAdminController::class, 'reply'])->name('message-reply');
+
+//setting
+Route::get('settings', [SettingController::class, 'index'])->name('index-setting');
+Route::post('change-pass', [SettingController::class, 'changePass'])->name('changePass-setting');

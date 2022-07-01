@@ -241,7 +241,7 @@
 
                             <li class="slide">
                                 <a class="side-menu__item" data-bs-toggle="slide"
-                                    href="{{ route('message-index') }}">
+                                    href="{{ route('index-setting') }}">
                                     <i class="fa-solid fa-network-wired side-menu__icon"></i>
                                     <span class="side-menu__label">Admin Setting</span></a>
                             </li>

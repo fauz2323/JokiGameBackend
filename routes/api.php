@@ -32,6 +32,8 @@ Route::post('login', [AuthController::class, 'login']);
 
 Route::middleware(['auth:sanctum'])->group(function () {
     Route::get('auth', [AuthController::class, 'auth']);
+    Route::post('changePass', [AuthController::class, 'changePass']);
+    Route::get('getDataUser', [AuthController::class, 'getDataUser']);
 
     //topup
     Route::get('topup-list', [TopUpController::class, 'all']);
