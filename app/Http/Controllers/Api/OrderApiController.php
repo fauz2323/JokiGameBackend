@@ -84,4 +84,14 @@ class OrderApiController extends Controller
             'status' => 'ok',
         ], 200);
     }
+
+    public function getReview(Request $request)
+    {
+        $review = Review::where('product_id', $request->id)->with('user')->get();
+
+        return response()->json([
+            'status' => 'ok',
+            'review' => $review,
+        ], 200);
+    }
 }

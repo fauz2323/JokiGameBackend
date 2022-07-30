@@ -56,17 +56,19 @@
                                 <h3 class="mb-4"><span class="me-2 fw-bold fs-25">{{ $order->product->price }}</span>
                                 </h3>
                                 <hr>
-                                <h4 class="mt-4"><b> Status Order</b></h4>
-                                <form action="{{ route('changeStatus', $order->id) }}" method="post">
-                                    @csrf
-                                    <select class="form-select" name="status" aria-label="Default select example">
-                                        <option selected disabled>Open this select menu</option>
-                                        <option value="diproses">diproses</option>
-                                        <option value="dibatalkan">dibatalkan</option>
-                                        <option value="selesai">selesai</option>
-                                    </select>
-                                    <button type="submit" class="btn btn-primary mt-2">Change</button>
-                                </form>
+                                <h4 class="mt-4"><b> Status Order ( {{ $order->status }} )</b></h4>
+                                @if ($order->status != 'dibatalkan' && $order->status != 'selesai')
+                                    <form action="{{ route('changeStatus', $order->id) }}" method="post">
+                                        @csrf
+                                        <select class="form-select" name="status" aria-label="Default select example">
+                                            <option selected disabled>Open this select menu</option>
+                                            <option value="diproses">diproses</option>
+                                            <option value="dibatalkan">dibatalkan</option>
+                                            <option value="selesai">selesai</option>
+                                        </select>
+                                        <button type="submit" class="btn btn-primary mt-2">Change</button>
+                                    </form>
+                                @endif
 
                             </div>
                         </div>

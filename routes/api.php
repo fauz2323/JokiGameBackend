@@ -49,7 +49,6 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::post('detail-product', [ProductControllerUser::class, 'productDetail']);
     Route::post('detail-product-porto', [ProductControllerUser::class, 'getPortofolio']);
     Route::post('detail-product-getImage', [ProductControllerUser::class, 'getImage']);
-    Route::post('product-review', [ProductControllerUser::class, 'addReview']);
     Route::post('product-list', [ProductControllerUser::class, 'product']);
 
 
@@ -57,6 +56,8 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::post('make-order', [OrderApiController::class, 'makeOrder']);
     Route::get('list-order', [OrderApiController::class, 'orderList']);
     Route::post('detail-order', [OrderApiController::class, 'orderDetail']);
+    Route::post('product-review', [OrderApiController::class, 'addReview']);
+    Route::post('get-review', [OrderApiController::class, 'getReview']);
 
     //message
     Route::post('send-message', [MessageUserController::class, 'sendMessage']);
@@ -66,4 +67,13 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::post('change-name', [SettingUserController::class, 'changeName']);
     Route::post('change-password', [SettingUserController::class, 'changePass']);
     Route::post('change-email', [SettingUserController::class, 'changeMail']);
+});
+
+
+Route::post('xxzx', function (Request $request) {
+    $data = $request->data;
+
+
+
+    return response()->json($data[0]);
 });

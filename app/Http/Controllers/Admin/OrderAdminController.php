@@ -46,7 +46,7 @@ class OrderAdminController extends Controller
             $order->status = $request->status;
             $order->save();
 
-            if ($order->status != 'dibatalkan') {
+            if ($request->status == 'dibatalkan') {
                 $order->user->balance->balance = $order->user->balance->balance + $order->price;
                 $order->user->balance->save();
             }
