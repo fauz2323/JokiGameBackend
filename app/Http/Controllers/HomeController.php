@@ -2,6 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\BalanceUser;
+use App\Models\Message;
+use App\Models\Order;
+use App\Models\User;
+use App\Models\UserJoki;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +28,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $user = UserJoki::all();
+        $balance = BalanceUser::all();
+        $order = Order::all();
+        $message = Message::all();
+        return view('home', compact('user', 'balance', 'order', 'message'));
     }
 }

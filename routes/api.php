@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\AboutApiController;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\GameController;
 use App\Http\Controllers\Api\MessageUserController;
@@ -29,6 +30,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::post('register', [AuthController::class, 'register']);
 Route::post('login', [AuthController::class, 'login']);
+Route::get('about-apps', [AboutApiController::class, 'getAbout']);
+
 
 Route::middleware(['auth:sanctum'])->group(function () {
     Route::get('auth', [AuthController::class, 'auth']);

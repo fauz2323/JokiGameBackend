@@ -59,10 +59,8 @@
                             href="javascript:void(0)"></a>
                         <!-- sidebar-toggle-->
                         <a class="logo-horizontal " href="{{ route('home') }}">
-                            <img src="{{ asset('landing/img/new_safemeta.png') }}"
-                                class="header-brand-img desktop-logo" alt="">
-                            <img src="{{ asset('landing/img/new_safemeta.png') }}"
-                                class="header-brand-img light-logo1" alt="">
+                            <img src="{{ asset('LOGO.png') }}" class="header-brand-img desktop-logo" alt="">
+                            <img src="{{ asset('LOGO.png') }}" class="header-brand-img light-logo" alt="">
 
                         </a>
                         <!-- LOGO -->
@@ -148,8 +146,8 @@
                                                     <i class="dropdown-icon fe fe-alert-circle"></i>
                                                     {{ __(' Logout') }}
                                                 </a>
-                                                <form id="logout-form" action="{{ route('logout') }}"
-                                                    method="POST" class="d-none">
+                                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                                    class="d-none">
                                                     @csrf
                                                 </form>
                                             </div>
@@ -169,14 +167,14 @@
                 <div class="app-sidebar">
                     <div class="side-header">
                         <a class="header-brand1" href="{{ route('home') }}">
-                            <img src="{{ asset('landing/img/new_safemeta.png') }}"
-                                class="header-brand-img desktop-logo" alt="">
-                            <img src="{{ asset('landing/img/new_safemeta.png') }}"
-                                class="header-brand-img toggle-logo" alt="">
-                            <img src="{{ asset('landing/img/new_safemeta.png') }}"
-                                class="header-brand-img light-logo" alt="">
-                            <img src="{{ asset('landing/img/new_safemeta.png') }}"
-                                class="header-brand-img light-logo1" alt="">
+                            <img src="{{ asset('LOGO.png') }}" class="header-brand-img desktop-logo" height="50"
+                                alt="">
+                            <img src="{{ asset('LOGO.png') }}" class="header-brand-img toggle-logo" height="50"
+                                alt="">
+                            <img src="{{ asset('LOGO.png') }}" class="header-brand-img light-logo" height="50"
+                                alt="">
+                            <img src="{{ asset('LOGO.png') }}" class="header-brand-img light-logo1" height="50"
+                                alt="">
 
                         </a>
                         <!-- LOGO -->
@@ -201,7 +199,7 @@
                             </li>
                             <li class="slide">
                                 <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)">
-                                    <i class="fa-solid fa-users  side-menu__icon"></i>
+                                    <i class="fa-solid fa-gamepad side-menu__icon"></i>
                                     <span class="side-menu__label">Game</span>
                                     <i class="angle fe fe-chevron-right"></i>
                                 </a>
@@ -215,34 +213,37 @@
                             </li>
 
                             <li class="slide">
-                                <a class="side-menu__item" data-bs-toggle="slide"
-                                    href="{{ route('topup-index') }}">
-                                    <i class="fa-solid fa-network-wired side-menu__icon"></i>
+                                <a class="side-menu__item" data-bs-toggle="slide" href="{{ route('topup-index') }}">
+                                    <i class="fa-solid fa-money-bill side-menu__icon"></i>
                                     <span class="side-menu__label">TopUp</span></a>
                             </li>
 
                             <li class="slide">
-                                <a class="side-menu__item" data-bs-toggle="slide"
-                                    href="{{ route('order-index') }}">
-                                    <i class="fa-solid fa-network-wired side-menu__icon"></i>
+                                <a class="side-menu__item" data-bs-toggle="slide" href="{{ route('order-index') }}">
+                                    <i class="fa-solid fa-cart-shopping side-menu__icon"></i>
                                     <span class="side-menu__label">Order List</span></a>
                             </li>
 
                             <li class="slide">
                                 <a class="side-menu__item" data-bs-toggle="slide"
                                     href="{{ route('message-index') }}">
-                                    <i class="fa-solid fa-network-wired side-menu__icon"></i>
+                                    <i class="fa-solid fa-message side-menu__icon"></i>
                                     <span class="side-menu__label">Message Users</span></a>
                             </li>
 
                             <li class="sub-category">
                                 <h3>Settings</h3>
                             </li>
+                            <li class="slide">
+                                <a class="side-menu__item" data-bs-toggle="slide" href="{{ route('index-about') }}">
+                                    <i class="fa-regular fa-address-card side-menu__icon"></i>
+                                    <span class="side-menu__label">About Us</span></a>
+                            </li>
 
                             <li class="slide">
                                 <a class="side-menu__item" data-bs-toggle="slide"
                                     href="{{ route('index-setting') }}">
-                                    <i class="fa-solid fa-network-wired side-menu__icon"></i>
+                                    <i class="fa-solid fa-gear side-menu__icon"></i>
                                     <span class="side-menu__label">Admin Setting</span></a>
                             </li>
 

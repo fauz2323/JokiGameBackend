@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\GameAdminController;
 use App\Http\Controllers\Admin\MessageAdminController;
 use App\Http\Controllers\Admin\OrderAdminController;
@@ -42,7 +43,7 @@ Route::get('product-index', [ProductAdminCOntroller::class, 'index'])->name('pro
 Route::get('product-edit/{id}', [ProductAdminCOntroller::class, 'view'])->name('product-editView');
 Route::get('product-delete/{id}', [ProductAdminCOntroller::class, 'delete'])->name('product-delete');
 Route::post('product-post', [ProductAdminCOntroller::class, 'add'])->name('product-post');
-Route::post('edit-post/{id}/product', [ProductAdminCOntroller::class, 'store'])->name('edit-post-product');
+Route::post('edit-post/{id}/product', [ProductAdminCOntroller::class, 'storeEdit'])->name('edit-post-product');
 Route::get('product-detail/{id}', [ProductAdminCOntroller::class, 'viewDetail'])->name('product-View');
 Route::get('delete-portofolio/{id}', [ProductAdminCOntroller::class, 'deletePorto'])->name('delete-portofolio');
 Route::post('add-portofolio/{id}', [ProductAdminCOntroller::class, 'portofolio'])->name('add-portofolio');
@@ -66,3 +67,7 @@ Route::post('send-message/{id}', [MessageAdminController::class, 'reply'])->name
 //setting
 Route::get('settings', [SettingController::class, 'index'])->name('index-setting');
 Route::post('change-pass', [SettingController::class, 'changePass'])->name('changePass-setting');
+
+//about
+Route::get('about', [AboutController::class, 'index'])->name('index-about');
+Route::post('about-store', [AboutController::class, 'storAbout'])->name('storAbout-setting');

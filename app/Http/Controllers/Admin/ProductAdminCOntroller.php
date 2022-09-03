@@ -95,7 +95,7 @@ class ProductAdminCOntroller extends Controller
         return view('admin.product.edit', compact('data', 'game'));
     }
 
-    public function store(Request $request, $id)
+    public function storeEdit(Request $request, $id)
     {
         $data = Product::find($id);
 
@@ -109,7 +109,7 @@ class ProductAdminCOntroller extends Controller
 
         if ($request->file('image')) {
             foreach ($request->file('image') as $key) {
-                $path = Storage::disk('public')->putFile('product', $request->file('image'));
+                $path = Storage::disk('public')->putFile('product', $key);
 
                 $data->image()->create([
                     'path' => $path
@@ -117,7 +117,7 @@ class ProductAdminCOntroller extends Controller
             }
         }
 
-        return redirect()->route('product-index');
+        return redirect()->route('product-index')->with('success', 'success change product');
     }
 
     public function delete($id)
