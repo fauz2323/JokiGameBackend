@@ -26,7 +26,7 @@
         <nav class="navbar navigation__transparent navbar-expand-lg navbar-light position-absolute">
             <div class="container position-relative">
                 <a class="navbar-brand" href="index.html">
-                    <img src="{{ asset('LOGO2.png') }}" alt="" class="img-fluid">
+                    <img src="{{ asset('LOGO2.png') }}" alt="" width="50px" height="40px" class="img-fluid">
                 </a>
                 <!-- navbar-brand end -->
 
