@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>vAPP - App Landing Page</title>
+    <title>JOK YOUR GAME</title>
     <!-- Favicon CSS -->
     <link rel="icon" type="img/png" sizes="32x32" href="img/favicon.png">
     <!-- fonts -->
@@ -26,7 +26,7 @@
         <nav class="navbar navigation__transparent navbar-expand-lg navbar-light position-absolute">
             <div class="container position-relative">
                 <a class="navbar-brand" href="index.html">
-                    <img src="landing/img/brand-logo-white.png" alt="" class="img-fluid">
+                    <img src="{{ asset('LOGO2.png') }}" alt="" class="img-fluid">
                 </a>
                 <!-- navbar-brand end -->
 
@@ -305,7 +305,7 @@
                 <div class="row">
                     <div class="col-12 col-md-10 col-lg-8 text-center mx-auto mb-80 mb-md-100 text-center">
                         <div class="section-title">
-                            <h3 class="mb-20">How vApp works?</h3>
+                            <h3 class="mb-20">How Jok Your Game works?</h3>
                             <p>Our users are impatient. They're probably distracted too. Keep it simple and beautiful,
                                 fun and functional. Clean aesthetics supported by a strong concept is what we stand for.
                             </p>
@@ -586,7 +586,7 @@
                 <div class="row">
                     <div class="col-12 text-center">
                         <p class="faq-contact">Still have a question? Reach out to us: <a href="#"
-                                class="color-primary text-hover--primary">info@vapp.com</a></p>
+                                class="color-primary text-hover--primary">info@jokyourgame.my.id</a></p>
                     </div>
                 </div>
             </div>
@@ -645,7 +645,7 @@
                 <div class="row text-center text-lg-left">
                     <div class="col-12 col-lg-6 col-xl-5 offset-lg-1 mb-30 mb-lg-0">
                         <div class="mb-40 mt-lg-50">
-                            <h3 class="mb-18">Try vApp for free!</h3>
+                            <h3 class="mb-18">Try Jok Your Game for free!</h3>
                             <p>Big, small, online, offline, local or international. Size doesn't matter. We work on
                                 diverse projects for top brands as well as for cool startups. Check out some of our
                                 favorites.</p>
@@ -689,7 +689,6 @@
                     <div class="col-12 col-lg-7 mx-auto">
                         <div class="text-center">
                             <a class="mb-25" href="index.html">
-                                <img src="landing/img/brand-logo-purple.png" alt="">
                             </a>
                             <p class="font-size--16 text-color--400 mb-55">Sitting proudly atop M3565 is the two-storey
                                 penthouse. The master bedroom suite is phenomenally spacious and opens out to a
@@ -714,7 +713,7 @@
                             <!-- widget end -->
                             <span
                                 class="copyright text-color--400 text-dark-400 d-flex align-items-center justify-content-center">
-                                &copy;2018 vApp, Design with <i class="nc-icon nc-heart-2 color-orange"></i> <a
+                                &copy;2018 JYG~Team, Design with <i class="nc-icon nc-heart-2 color-orange"></i> <a
                                     href="#">Team Dhrubok</a>
                             </span>
                         </div>
