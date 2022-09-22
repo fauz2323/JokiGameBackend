@@ -1,0 +1,18 @@
+.video--v1{
+    .video{
+        &-cover{
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            z-index: 99;
+            @extend .box-shadow--2;
+            width: 100%;
+            
+            img{
+                width: 100%;
+            }
+        }   
+    }
+}

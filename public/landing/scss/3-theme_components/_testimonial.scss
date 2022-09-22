@@ -1,0 +1,168 @@
+.testimonial{
+    blockquote{
+        font-style: italic;
+    }
+    &--v1,
+    &--v2{
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        blockquote{
+            font-weight: 500;
+            color: $color-white;
+        }
+    }
+    &--v1{
+        margin-top: -80px;
+        padding-top: 120px;
+        padding-bottom: 120px;
+        @include breakpoint-min(md){
+            margin-top: -122px;
+            padding-top: 200px;
+            padding-bottom: 140px;
+        }
+        @include breakpoint-min(lg){
+            margin-top: -250px;
+            padding-top: 320px;
+            padding-bottom: 150px;
+        }
+        @include breakpoint-min(xl){
+            padding-top: 375px;
+            padding-bottom: 210px;
+        }
+        .carosuel-slider--v1{
+            span{
+                img{
+                    width: 44px;
+                    height: 44px;
+                }
+            }
+        }
+         
+        &:after, &:before {
+            @media  only screen and (min-width: 1600px){
+                content: "";
+                position: absolute;
+                width: 100%;
+                -webkit-transform: rotate(-53deg);
+                -ms-transform: rotate(-53deg);
+                transform: rotate(-53deg);
+                background-color: #000;
+                opacity: 0.03;
+                height: 600px;
+            }
+        }
+        &:after {
+            top: 250px;
+            right: 0;
+            -webkit-transform-origin: top right;
+            -ms-transform-origin: top right;
+            transform-origin: top right;
+            z-index: -1;
+        }
+        
+        &:before {
+            bottom: -200px;
+            left: 0;
+            -webkit-transform-origin: bottom left;
+            -ms-transform-origin: bottom left;
+            transform-origin: bottom left;
+        }
+
+
+    }
+
+    &--v2{
+        @include breakpoint-max(lg){
+            .background-holder{
+                display: none;
+            }
+        }
+        .carosuel-slider--v2{
+            blockquote{
+                font-size: rem(21);
+                @include breakpoint-min(md){
+                    font-size: rem(24);
+                }
+                
+            }
+        }
+        
+        &:after, &:before {
+            @media  only screen and (min-width: 1600px){
+               content: "";
+               -webkit-transform: rotate(-54deg);
+               -ms-transform: rotate(-54deg);
+               transform: rotate(-54deg);
+               background-color: #2A3035;
+               position: absolute;
+               bottom: 0;
+               height: 100%;
+               width: 100%;
+               
+            }
+        }
+           &:after {
+               bottom: -10%;
+               right: -65%;
+               z-index: -1;
+           }
+           
+           &:before {
+               left: -30%;
+           }
+    }
+
+    &--v3{
+        .carosuel-slider--v3{
+            .slide{
+                margin: 0 17px;
+                position: relative;
+                .svg{
+                    position: absolute;
+                    z-index: 1;
+                    top: 10px;
+                    left: 30px;
+                    svg {
+                        path {
+                            fill: $color-orange-400;
+                        }
+                    }
+                }
+               .testimonial-content{
+                    &::before{
+                        position: absolute;
+                        content: "";
+                        bottom: -30px;
+                        left: 35px;
+                        border-top: 22px solid transparent;
+                        border-left: 24px solid $color-white;
+                        border-bottom: 22px solid transparent;
+                        transform: rotate(90deg);
+                    }
+                }
+                .testimonial-img img{
+                    border: 1px solid #DFE3EB;
+                    .theme-appearance &{
+                        border: 1px solid #FFF;
+                    }
+               }
+                blockquote{
+                    border: 1px solid #F0F3F8;
+                    padding: rem(60) rem(34);
+                    border-radius: rem(10);
+                }
+            }
+        }
+    }
+
+    &--v4{
+        .carosuel-slider--v4{
+            img{
+                border-style: solid;
+                border-width: rem(2);
+                @extend %btn-border-color-primary;
+            }
+        }
+    }
+}

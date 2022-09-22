@@ -1,0 +1,29 @@
+// MARKUP:
+
+// <div class="list-group">
+    // <a href="#" class="list-group-item" data-scroll-nav="1"><span>...</span></a>
+    // <a href="#" class="list-group-item" data-scroll-nav="2"><span>...</span></a>
+    // <a href="#" class="list-group-item" data-scroll-nav="3"><span>...</span></a>
+    // <a href="#"class="list-group-item" data-scroll-nav="4"><span>...</span></a>
+// </div>
+
+/**! ----- Learn (used in home cloud storage)  ---- **/
+.list-group{
+    .list-group-item-action{
+        border: 0;
+        padding: 0;
+        padding-bottom: rem(25);
+        font-size: rem(18);
+        text-transform: capitalize;
+        &:last-child{
+            padding: 0;
+        }
+        &:hover,
+        &:focus,
+        &.active{
+            background: none;
+            color: $color-primary;
+            @extend .color-primary;
+        }
+    }
+}

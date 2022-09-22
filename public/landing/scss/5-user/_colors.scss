@@ -1,0 +1,138 @@
+
+//  Color palette 
+// =============================================================
+$color-white: #ffffff;
+$color-white-200: #D6E1FF;
+$color-black: #000000;
+$color-pink: #FFEFF1;
+$color-violet: #9b59b6;
+$color-firoza: #16a085;
+ 
+// Gray Shade 
+$color-light-gray-100: #f6f7f8;
+$color-light-gray-200: #E2E6EA;
+$color-light-gray-300: #F2F4F6;
+$color-gray-200: #A9AEB9;
+$color-gray-400: #6A6A6A;
+$color-gray-500: #51545E;
+$color-gray-600: #30353D;
+ 
+// Dark Shade 
+// $color-dark-400: #3B3E42;
+$color-dark: #2f3640;
+$color-dark-200: #7D8188;
+$color-dark-300: #717781;
+$color-dark-400: #818992;
+$color-dark-500: #313339;
+$color-dark-600: #3B3E42;
+$color-dark-700: #2D3136;
+$color-dark-800: #2A2F36;
+$color-dark-900: #30353C;
+
+// Purple Shade
+$color-purple: #DB64F9;
+$color-purple-light: #995CDD;
+$color-purple-dark: #5618AD;
+
+// Orange Shade
+$color-orange: #ea4a27;
+$color-orange-light: #FFA500;
+$color-orange-400: #FF6348;
+
+// Green Shade
+$color-green: #27AE60;
+$color-green-200: #F1FFF7;
+$color-green-300: #1BDD69;
+$color-green-400: #4F6B5C;
+ 
+// Blue Shade
+$color-blue: #4777F4;
+$color-blue-100: #F5F9FF;
+$color-blue-200: #739AFF;
+$color-blue-300: #53a0fe;
+$color-blue-400: #4892F8;
+$color-blue-500: #2F69F8;
+$color-blue-600: #2477E6;
+$color-blue-700: #1C6BE6;
+ 
+// Yellow Shade 
+$color-yellow: #F8E71C;
+
+ 
+// CTA button color: (Color for CTA/ Most focuesd button)
+$cta-bg-1: linear-gradient(180deg, #ECEF3C 0%, #D5DB1C 100%);
+$cta-bg-2: linear-gradient(#FF805A, #FF6348);
+$cta-bg-3: rgba(#1BDD69, .10);
+
+$gradient-yellow: linear-gradient(180deg, #ecef3c 0%, #d5db1c 100%);
+$gradient-orange: linear-gradient(#FF805A, #FF6348);
+$gradient-orange-2: linear-gradient(45deg, #FF805A, #FF6348);
+$gradient-blue: linear-gradient(45deg, #1C5AE0 0%, #53A0FD 50%, #51CAEC 100%);
+$gradient-1: linear-gradient(-45deg, #2f1ce0 0%, #53a0fd 50%, #51eca5 100%);
+$gradient-2: linear-gradient(-45deg, #995CDD 0%, #644BE7 100%);
+$gradient-3:  linear-gradient(-46deg, #2313B8 0%, #53A0FD 50%, #09BF6B 100%);
+$gradient-4: linear-gradient(-45deg, #644BE7 0%, #8054E2 50%, #995CDD 100%);
+$gradient-5: linear-gradient(-45deg, #995CDD 0%, #7F54E2 50%, #644BE7 100%);
+$gradient-6: linear-gradient(180deg, rgba(100, 216, 40, 0.988762) 5.15%, rgba(1, 205, 105, 0.0001) 100%);
+$gradient-7: linear-gradient(-47deg, #8731E8 0%, #4528DC 100%);
+$gradient-8: linear-gradient(45deg, #6CE01C 0%, #0175CD 100%);
+$gradient-9: linear-gradient(45deg, #8448ff 0%, #21007b 80%);
+$gradient-10: linear-gradient(45deg, #ff4bc4 0%, #375aeb 66%, #2b5bed 100%);
+$gradient-11: linear-gradient(180deg, #64d828 20%, rgba(1,205,105,0) 120%);
+
+
+//border-color
+$border-white: #ffffff;
+$border-white-bg: rgba(255, 255, 255, .20);
+$border-orange: #ea4a27;
+$border-green: #1BDD69;
+$border-green-200: #F1FFF7;
+$border-light: #e1e5e9;
+$border-light-2: #ededed;
+$border-light-3: #E2E6EA;
+$border-light-4: #818992;
+$border-light-5: #E1ECFF;
+$border-light-6: #EEF0F2;
+$border-light-7: #E0E8F7;
+$border-dark-bg: rgba(45, 49, 54, 0.9);
+$border-black-bg: rgba(0, 0, 0, .06);
+$border-dark: #2f3640;
+$border-dark-1: #707070;
+$border-dark-2: #454A52;
+$border-dark-3: #3c4047;
+$border-dark-4: #3A414C;
+$border-dark-5: #30353C;
+
+ 
+//  cta color
+$cta-color-1: $color-yellow;
+$cta-color-2: $color-orange;
+
+
+
+// Declaring the primary color.
+// 
+// YOU CAN CHANGE THE DEFAULT THEME COLOR BY UPDATING "$COLOR-PRIMARY" VARIABLE. YOU CAN EITHER UPDATE IT BY PLACING ANY COLOR VARIABLE FROM ABOVE OR PASTE YOUR OWN COLOR CODE. 
+// 
+$color-primary: $color-blue;
+
+
+// Colors Init
+// =============================================================
+/**! ----- Theme Common colors (Also Used as extend in SCSS ) ---- **/
+// bg primary
+%bg-primary {
+    background: $color-primary;
+}
+// color primary
+%color-primary {
+    color: $color-primary;
+}
+// fill primary
+%fill-primary {
+    fill: $color-primary;
+}
+// btn border color
+%btn-border-color-primary {
+    border-color: $color-primary;
+}

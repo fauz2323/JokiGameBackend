@@ -1,0 +1,16 @@
+.pagination{
+    justify-content: space-between;
+    display: flex;
+    .page{
+        &-item{
+            font-weight: 500;
+        }
+        &-link{
+            font-size: rem(16);
+            border: 1px solid $border-light-3;
+            @extend .rounded--default;
+            color: $color-dark-400;
+            padding: rem(14) rem(26);
+        }
+    }
+}

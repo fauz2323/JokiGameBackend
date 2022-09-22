@@ -1,0 +1,312 @@
+/**! ----- Theme Common colors (Also Used as extend in SCSS ) ---- **/
+// bg primary
+%bg-primary {
+    background: $color-primary;
+}
+// color primary
+%color-primary {
+    color: $color-primary;
+}
+// fill primary
+%fill-primary {
+    fill: $color-primary;
+}
+// btn border color
+%btn-border-color-primary {
+    border-color: $color-primary;
+}
+/**! ----- Base Font Color ---- **/
+%heading-text-color {
+    color: $color-dark-700;
+    .section--dark &,
+    .bg-color--primary &{
+        &:not([class*='text-color-']):not([class*='color-']) {
+            color: $color-white;
+        }
+    }
+}
+%body-text-color {
+    color: $color-dark-400;
+}
+
+// Dynamic border color which should be work with any background
+%border-color {
+    border-color: $border-light-5;
+
+    .section--dark & {
+        border-color: $border-dark-2;
+    }
+    .bg-color--primary & {
+        border-color: $border-white-bg;
+    }
+    .bg-orange &,
+    .bg-green & {
+        border-color: $border-white-bg !important;
+    }
+}
+
+/**! ----- SVG fill Color ---- **/
+.fill--primary {
+    rect,
+    path,
+    polygon,
+    circle {
+        @extend %fill-primary;
+    }
+}
+
+// Border color:
+.border-color-primary {
+    @extend %btn-border-color-primary;
+}
+.border-color-white {
+    border-color: $border-white;
+}
+.border-color-white--2 {
+    border-color: $border-white-bg;
+}
+.border-color-black {
+    border-color: $border-black-bg;
+}
+.border-color-orange {
+    border-color: $border-orange;
+}
+.border-color-green {
+    border-color: $border-green;
+}
+.border-color-light {
+    border-color: $border-light;
+}
+.border-color-light--2 {
+    border-color: $border-light-2;
+}
+.border-color-light--3 {
+    border-color: $border-light-3;
+}
+.border-color-light--4 {
+    border-color: $border-light-4;
+}
+.border-color-light--5 {
+    border-color: $border-light-5;
+}
+.border-color-light--7 {
+    border-color: $border-light-7;
+}
+.border-color-dark--1 {
+    border-color: $border-dark-1;
+}
+.border-color-dark--4 {
+    border-color: $border-dark-4;
+}
+.border-color-dark--5 {
+    border-color: $border-dark-5;
+}
+
+// BACKGROUND COLORS
+/**! ----- Theme Appearance Background ---- **/
+#{$theme-light} {
+    .main {
+        background: $color-white;
+    }
+}
+#{$theme-dark} {
+    background: $color-dark-800;
+}
+
+#{$theme-green} {
+    background: $color-green-200;
+}
+
+
+
+
+// ALL OTHER COLOR HELPER CLASSES. 
+.color-primary {
+    @extend %color-primary;
+}
+.color-white {
+    color: $color-white;
+}
+.color-white--200 {
+    color: $color-white-200;
+}
+.color-green {
+    color: $color-green;
+}
+.color-orange {
+    color: $color-orange;
+}
+.color-yellow {
+    color: $color-yellow ;
+}
+.color-purple {
+    color: $color-purple ;
+}
+.text-color--200{
+    color: $color-dark-200;
+}
+.text-color--300{
+    color: $color-dark-300;
+}
+.text-color--400{
+    color: $color-dark-400;
+}
+.text-color--500{
+    color: $color-dark-500;
+}
+.text-color--700{
+    color: $color-dark-700;
+}
+.text-color--900{
+    color: $color-dark-900;
+}
+
+.text-color-green--400{
+    color: $color-green-400;
+}
+.text-color-blue--400{
+    color: $color-blue-400;
+}
+.text-color-orange--400{
+    color: $color-orange-400;
+}
+
+.text-color-gray--200{
+    color: $color-gray-200;
+}
+.text-light-gray--100{
+    color: $color-light-gray-100;
+}
+.text-light-gray--200{
+    color: $color-light-gray-200;
+}
+.text-light-gray--300{
+    color: $color-light-gray-300;
+}
+
+
+
+// BACKGROUND COLORS
+/**! ----- Background Color Helper ---- **/
+.bg-color--primary {
+    @extend %bg-primary;
+}
+.bg-blue--100{
+    background: $color-blue-100;
+}
+.bg-white {
+    background-color: $color-white;
+}
+.bg-dark {
+    background-color: $color-dark !important;
+}
+.bg-green {
+    background-color: $color-green;
+}
+.bg-green--300 {
+        background: $color-green-300;
+}
+.bg-yellow {
+    background-color: $color-yellow;
+}
+.bg-orange {
+    background-color: $color-orange;
+}
+.bg-purple-dark {
+    background-color: $color-purple-dark;
+}
+
+.bg-pink {
+    background-color: $color-pink ;
+}
+.bg-gray-600{
+    background-color: $color-gray-600;
+}
+.bg-light-gray--100 {
+    background: $color-light-gray-100;
+}
+.bg-light-gray--200 {
+    background: $color-light-gray-200;
+}
+.bg-light-gray--300 {
+    background: $color-light-gray-300;
+}
+.bg-blue--200 {
+    background: $color-blue-200;
+}
+.bg-blue--300 {
+    background: $color-blue-300;
+}
+.bg-blue--600 {
+    background: $color-blue-600;
+}
+.bg-blue--700 {
+    background: $color-blue-700;
+}
+.bg-dark--600 {
+    background: $color-dark-600;
+}
+.bg-dark--700 {
+    background: $color-dark-700;
+}
+.bg-dark--800 {
+    background: $color-dark-800;
+}
+.bg-green--200 {
+    background: $color-green-200;
+}
+
+/**! ----- Background Color with Opacity ---- **/
+.bg-color {
+    &--white-opacity {
+        &--30 {
+            background: rgba($color-white, .30);
+        }
+    }
+}
+
+/**! ----- gradientcolor ---- **/
+.gradient-1{
+    background-image: $gradient-1;
+}
+.gradient-2{
+    background-image: $gradient-2;
+}
+.gradient-3{
+    background-image: $gradient-3;
+}
+.gradient-4{
+    background-image: $gradient-4;
+}
+.gradient-5{
+    background-image: $gradient-5;
+}
+.gradient-6{
+    background-image: $gradient-6;
+}
+.gradient-7{
+    background-image: $gradient-7;
+}
+.gradient-8{
+    background-image: $gradient-8;
+}
+.gradient-9{
+    background-image: $gradient-9;
+}
+.gradient-10{
+    background-image: $gradient-10;
+}
+.gradient-yellow{
+    background-image: $gradient-yellow;
+}
+.gradient-orange{
+    background-image: $gradient-orange;
+}
+.gradient-blue{
+    background-image: $gradient-blue;
+}
+.gradient-orange--2{
+    background-image: $gradient-orange-2;
+}
+
+

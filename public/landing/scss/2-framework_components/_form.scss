@@ -1,0 +1,167 @@
+/**! ----- Form General Styling ---- **/
+.form{
+    &-group{
+        margin: 0;
+    }
+    input{
+        @include input-placeholder;
+    }
+    .form-control{
+        margin-right: rem(1);
+        &:focus,
+        textarea {
+            box-shadow: none;
+        }
+    }
+
+    &--v1,
+    &--v2{
+        input{
+            font-size: rem(17);
+            color: $color-dark-400;
+            @include  input-placeholder{
+                font-weight: 400;
+                color: $color-dark-400;
+            }
+        }
+    }
+    
+    &--v1{
+        .form-control{
+            padding: rem(34) rem(34);
+            @extend .rounded--8;
+            &:focus{
+                border-color: #fff;
+                z-index: initial;
+            }
+
+            @include breakpoint-max(lg){
+                padding: rem(30) rem(30);
+                max-width: rem(400);
+            }
+            @include breakpoint-max(sm){
+                max-width: rem(270);
+            }
+        }
+    
+        @include breakpoint-max(lg){
+            .form-group{
+                justify-content: center;
+            }
+        }
+        .input-group{
+            justify-content: center;
+            @include breakpoint-min(lg){
+                justify-content: flex-start;
+            }
+            
+        }
+    }
+
+    &--v2{
+        .form-group{
+            margin-bottom: rem(16);
+        }
+        .form-control{
+            border: 1px solid $border-light-3;
+            padding:rem(29) rem(22);
+            @extend .rounded--10;
+        }
+    }
+
+    &--v3{
+        .form{
+            @include breakpoint-min(md){
+                display: flex;
+                justify-content: center;
+            }
+            &-group{
+                margin-right: rem(5);
+                @include breakpoint-min(lg){
+                    margin-right: rem(5);
+                }
+                @include breakpoint-min(xl){
+                    margin-right: rem(18);
+                }
+                @include breakpoint-max(md){
+                   margin-bottom: rem(20);
+                }
+            }
+            input{
+                font-size: rem(16);
+                color: $color-white;
+                background: 0;
+                border: 1px solid $border-green-200;
+                text-transform: capitalize;
+                @include  input-placeholder{
+                    font-weight: 500;
+                    color: $color-white;
+                }
+            }
+            .form-control{
+                padding: rem(26) rem(20);
+                width: 100%;
+                @extend .rounded--default;
+                @include breakpoint-min(xl){
+                    min-width: rem(230);
+                }
+            }
+        }
+    }
+
+    &--v4{
+        .form{
+            &-group {
+                margin-bottom: 25px;
+            }
+            label {
+                color: #2D3136;
+                font-size: 17px;
+                text-transform: capitalize;
+                margin-bottom: 12px;
+            }
+            input,
+            textarea{
+                font-size: rem(17);
+                color: $color-dark-400;
+                background: 0;
+                border: 1px solid $border-light-3;
+                text-transform: capitalize;
+                @include  input-placeholder{
+                    font-weight: 400;
+                    color: $color-dark-400;
+                }
+            }
+            &-control{
+                @extend .rounded--10;
+                padding: rem(28) rem(20);
+            }    
+            .btn{
+                padding: rem(14) rem(20);
+            }
+        }
+    }
+    &--v5{
+        .form-control{
+            border: 1px solid #D5D8DE;
+            padding:rem(37) rem(28);
+            @extend .rounded--10;
+        }
+        input{
+            color: #A9AEB9;
+            font-size: rem(18);
+            font-weight: 400;
+            @include  input-placeholder{
+                color: #A9AEB9;
+                font-size: rem(18);
+                font-weight: 400;
+            }
+        }
+        .btn{
+            padding: 0 rem(22);
+            border-top-right-radius: rem(10);
+            border-bottom-right-radius: rem(10);
+        }
+    }
+}
+

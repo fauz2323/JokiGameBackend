@@ -1,0 +1,179 @@
+.footer{
+
+    .widget{
+        li{
+            a{
+                font-size: rem(16);
+                font-weight: 400;
+            }
+        }
+    }
+    .copyright{
+        i{
+            margin: rem(0) rem(2);
+        }
+        a{
+            color: $color-dark-400;
+            &:hover{
+                color: darken($color-dark-400, 10%);
+            }
+        }   
+    }
+    &.section-dark {
+         background-color: $color-dark-700;
+        .widget{
+            a{
+                color: $color-white;
+                &:hover{
+                    @extend %color-primary;
+                }
+            }
+        }
+    }
+    &.section-light{
+        .widget{
+            li{
+                a{
+                    color: $color-dark-700;
+                    &:hover{
+                        @extend %color-primary;
+                    }
+                }
+            }
+        }
+    }
+
+    &--v1,
+    &--v2{
+        .widget{
+            ul{
+                display: flex;
+                align-content: center;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            li{
+                padding-left: rem(11);
+                padding-right: rem(11);
+                a{
+                    font-size: rem(16);
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+
+    &--v1{
+        .widget-nav{
+            margin-bottom: rem(10);
+        }
+        &.section-dark{
+            background-color: $color-dark-700;
+        }
+    }
+    &--v2{
+        p{
+            font-size: rem(16);
+            line-height: rem(24);
+        }
+        &.section-dark {
+            background-color: $color-gray-600;
+            .widget{
+                ul{
+                   @include breakpoint-min(lg){
+                    justify-content: flex-end;
+                   }
+                }
+            }
+        }
+        &.section-light {
+            p{
+                color: $color-dark-700;
+            }
+        }
+        .theme-appearance &{
+            .copyright a{
+                &:hover{
+                    opacity: .8;
+                }
+            }
+        }
+    }
+    &--v3{
+        .newsfoot.bg-color--primary &{
+            .widget li a:hover{
+                color: lighten($color-dark-900, 20%);
+            }
+            .icon-group li:hover i{
+                background: lighten($color-dark-900, 25%);
+            }
+            p{
+                color: $color-dark-700;
+            }
+        }
+
+        .widget{
+            li{
+                line-height: rem(34);
+                a{
+                    color: $color-dark-200;
+                    &:hover{
+                        color: $color-dark-700;
+                    }
+                }
+            }
+        }
+        .brand-logo{
+            margin-bottom: rem(40);
+        }
+        .icon-group{
+            li{
+                &:hover{
+                    i{
+                        background: lighten($color-dark-900, 25%);
+                        color: $color-white;
+                    }
+                }
+                i{
+                    background: $color-gray-500;
+                    font-size: rem(12);
+                    @extend .transition-default;
+                }
+            }
+        }
+       
+        .footer-bottom-nav{
+            display: flex;
+            li{
+                margin-right: rem(25);
+                a{
+                    font-size: rem(16);
+                    font-weight: 400;
+                    color: $color-dark-200;
+                }
+            }
+        }
+        .copyright{
+            color: $color-dark-200;
+            a{
+                color: $color-dark-200;
+            }
+        }
+        &.footer-bg--green{
+            .widget li a,
+            .footer-bottom-nav li a,
+            .copyright a {
+                color: $color-dark-900;
+            }
+            .copyright{
+                color: $color-dark-900;
+            }
+            .icon-group li i{
+                background: $color-dark-900;
+            }
+        }
+    }
+}
+
+
+

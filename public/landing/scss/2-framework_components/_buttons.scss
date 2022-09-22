@@ -1,0 +1,260 @@
+/**! ----- Button General Styling ---- **/
+.btn{
+    border: 0;
+    outline: 0;
+    font-weight: 500;
+    font-size: rem(18);
+    padding: rem(16) rem(20); 
+    @extend .rounded--default;
+    display:inline-flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    transition: color 0.5s;
+    overflow: hidden;
+    @extend .transition--5;
+
+    &:focus,
+    &.focus {
+        box-shadow: none;
+    }
+
+    &-size--xl {
+        padding: rem(15) rem(60);
+    }
+    &-size--lg {
+        padding: rem(14) rem(48);
+    }
+    &-size--lg--2{
+        padding: rem(20) rem(28);
+        @include breakpoint-min(xl){
+            padding: rem(23) rem(33);
+        }
+    }
+    &-size--md {
+        font-size: rem(16);
+        padding: rem(15) rem(18);
+        @include breakpoint-min(lg){
+            padding: rem(15) rem(36);
+        }
+    }
+    &-size--md--2{
+        font-size: rem(15);
+        padding: rem(16) rem(32);   
+    }
+    &-size--md--3{
+        font-size: rem(14);
+        padding: rem(11) rem(28); 
+    }
+    &-size--md--4{
+        font-size: rem(14);
+        padding: rem(11) rem(38); 
+    }
+    &-size--sm {
+        padding: rem(8) rem(34); 
+    }
+    &-size--sm--2 {
+        padding: rem(8) rem(24); 
+        font-size: rem(18);
+    }
+    &--transparent {
+        background: transparent;
+    }
+}
+
+.btn-text {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+/**! ----- Button outline ---- **/
+.btn-outline{
+    border-width: 1px;
+    border-style: solid;
+    &--lg{
+        padding: rem(14) rem(45);     
+    }
+    &--lg--2{
+        padding: rem(20) rem(28);
+        @include breakpoint-min(xl){
+            padding: rem(22) rem(42); 
+        }    
+    }
+    &--md{
+        padding: rem(16) rem(22);
+    }
+    &--sm{
+        padding: rem(6) rem(34);
+    }
+    &--sm--2{
+        padding: rem(6) rem(20);
+    }
+}
+
+/**! ----- Button link ---- **/
+.btn-link{
+    font-size: rem(20);
+    font-weight: 500;
+    text-decoration: none;
+    @extend .transition-default;
+    i{
+        @extend .transition-default;
+    }
+    &:hover,
+    &:focus{
+        text-decoration: none;
+    }
+}
+
+/**! ----- text-color color ---- **/
+.text-color--primary{
+    @extend %color-primary;
+}
+
+/**! ----- Button color ---- **/
+.btn-color{
+    &--primary{
+        @extend %color-primary;
+        &:hover{
+            color: $color-white;
+        }
+    }
+    &--white{
+        color: $color-white;
+        &:hover{
+            color: $color-white;
+        }
+    }
+    &-dark--700{
+        color: $color-dark-700;
+    }
+}
+
+
+/**! ----- Button Background ---- **/
+.btn-bg{
+    &--primary {
+        @extend %bg-primary;
+        @extend .color-white;
+        &:hover {
+            @extend .color-white;
+        }
+    }
+    &--white{
+        @extend .bg-white;
+        &--30{
+            @extend .bg-color--white-opacity--30;
+        }
+    }
+    &--dark--300{
+        background: $color-dark-300;
+    }
+    &--purple-light {
+        background-color: $color-purple-light;
+    }
+    &--orange{
+        background-color: $color-orange;
+    }
+    &--green--300 {
+        background-color: $color-green-300;
+    }
+    &--green--10{
+        background: rgba($color-green-300, .10);
+    }
+    &--cta--1{
+        background: $cta-bg-1;
+        color: $color-dark-700;
+    }
+    &--cta--2{
+        background: $cta-bg-2;
+    }
+}
+
+/**! ----- Button icon ---- **/
+.btn-icon{
+    font-size: rem(26);
+    margin-right: rem(10);
+}
+
+
+/**! ----- button Cta ---- **/
+.btn-cta {
+    padding: rem(15) rem(26);
+    border-top-left-radius: rem(0)!important;
+    border-bottom-left-radius: rem(0)!important;
+    border-top-right-radius: rem(8) !important;
+    border-bottom-right-radius: rem(8) !important;
+    i{
+        color: $color-white;
+        font-size: rem(30);
+    }
+    &--2{
+        padding: rem(15) rem(22);
+        border-top-left-radius: rem(0)!important;
+        border-bottom-left-radius: rem(0)!important;
+        border-top-right-radius: rem(8)!important;
+        border-bottom-right-radius: rem(8)!important;
+    }
+    &--3{
+        font-size: rem(15);
+        padding: rem(16) rem(32);    
+    }
+    &--4{
+        font-size: rem(20);
+        padding: rem(14) rem(36);    
+    }
+}
+
+
+/**! ----- button Media (Play Buttons) ---- **/
+.btn-media{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @extend .rounded--full;
+    opacity: 0.8;
+    &--xl{
+        height: rem(112);
+        width: rem(112);
+        i{
+            font-size: rem(30);
+        }
+    }
+    &--lg{
+        height: rem(106);
+        width: rem(106);
+        i{
+            font-size: rem(34);
+        }
+    }
+    &--md{
+        height: rem(93);
+        width: rem(93);
+        i{
+            font-size: rem(25);
+        }
+    }
+    &--sm{
+        height: rem(61);
+        width: rem(61);
+        i{
+            font-size: rem(17);
+        }
+    }
+    i{
+        color: $color-white;
+    }
+}
+
+/**! ----- button Group ---- **/
+.button-group{
+    .btn{
+        margin-right: rem(15);
+        &:last-child{
+            margin-right: rem(0);
+        }
+    }
+}

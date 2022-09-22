@@ -1,0 +1,30 @@
+.download{
+    &--v1{
+        &.space--top--4{
+            @include breakpoint-max(lg){
+                padding-top: rem(130) !important;
+            }
+        }
+    }
+
+    &--v1,
+    &--v2{
+       .download-caption{
+            a{
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &--v2{
+        .download{
+            &-icon{
+                box-shadow: 0 0 0 20px #F1F5FF, 0 0 0 40px #FBFCFF;
+                i{
+                    font-size: rem(64);
+                }
+            }
+            
+        }
+    }
+}

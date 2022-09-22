@@ -1,0 +1,187 @@
+// Breakpoints
+// =========================================================
+$breakpoints: ("": "",
+"xs": 575px,
+"sm": 576px,
+"md": 768px,
+"lg": 992px,
+"xl": 1200px,
+) !default;
+ 
+
+
+
+//  Color palette 
+// =============================================================
+$color-white: #ffffff !default;
+$color-white-200: #D6E1FF !default;
+$color-black: #000000 !default;
+$color-pink: #FFEFF1 !default;
+$color-violet: #9b59b6 !default;
+$color-firoza: #16a085 !default;
+ 
+// Gray Shade 
+$color-light-gray-100: #f6f7f8 !default;
+$color-light-gray-200: #E2E6EA !default;
+$color-light-gray-300: #F2F4F6 !default;
+$color-gray-200: #A9AEB9 !default;
+$color-gray-400: #6A6A6A !default;
+$color-gray-500: #51545E !default;
+$color-gray-600: #30353D !default;
+ 
+// Dark Shade 
+// $color-dark-400: #3B3E42 !default;
+$color-dark: #2f3640 !default;
+$color-dark-200: #7D8188 !default;
+$color-dark-300: #717781 !default;
+$color-dark-400: #818992 !default;
+$color-dark-500: #313339 !default;
+$color-dark-600: #3B3E42 !default;
+$color-dark-700: #2D3136 !default;
+$color-dark-800: #2A2F36 !default;
+$color-dark-900: #30353C !default;
+
+// Purple Shade
+$color-purple: #DB64F9 !default;
+$color-purple-light: #995CDD !default;
+$color-purple-dark: #5618AD !default;
+
+// Orange Shade
+$color-orange: #ea4a27 !default;
+$color-orange-light: #FFA500 !default;
+$color-orange-400: #FF6348 !default;
+
+// Green Shade
+$color-green: #27AE60 !default;
+$color-green-200: #F1FFF7 !default;
+$color-green-300: #1BDD69 !default;
+$color-green-400: #4F6B5C !default;
+ 
+// Blue Shade
+$color-blue: #4777F4 !default;
+$color-blue-100: #F5F9FF !default;
+$color-blue-200: #739AFF !default;
+$color-blue-300: #53a0fe !default;
+$color-blue-400: #4892F8 !default;
+$color-blue-500: #2F69F8 !default;
+$color-blue-600: #2477E6 !default;
+$color-blue-700: #1C6BE6 !default;
+ 
+// Yellow Shade 
+$color-yellow: #F8E71C !default;
+
+ 
+// Declaring the primary color.
+$color-primary:  $color-blue !default;
+
+ 
+// CTA button color: (Color for CTA/ Most focuesd button)
+$cta-bg-1: linear-gradient(180deg, #ECEF3C 0%, #D5DB1C 100%);
+$cta-bg-2: linear-gradient(#FF805A, #FF6348);
+$cta-bg-3: rgba(#1BDD69, .10) !default;
+
+$gradient-yellow: linear-gradient(180deg, #ecef3c 0%, #d5db1c 100%);
+$gradient-orange: linear-gradient(#FF805A, #FF6348);
+$gradient-orange-2: linear-gradient(45deg, #FF805A, #FF6348);
+$gradient-blue: linear-gradient(45deg, #1C5AE0 0%, #53A0FD 50%, #51CAEC 100%);
+$gradient-1: linear-gradient(-45deg, #2f1ce0 0%, #53a0fd 50%, #51eca5 100%);
+$gradient-2: linear-gradient(-45deg, #995CDD 0%, #644BE7 100%);
+$gradient-3:  linear-gradient(-46deg, #2313B8 0%, #53A0FD 50%, #09BF6B 100%);
+$gradient-4: linear-gradient(-45deg, #644BE7 0%, #8054E2 50%, #995CDD 100%);
+$gradient-5: linear-gradient(-45deg, #995CDD 0%, #7F54E2 50%, #644BE7 100%);
+$gradient-6: linear-gradient(180deg, rgba(100, 216, 40, 0.988762) 5.15%, rgba(1, 205, 105, 0.0001) 100%);
+$gradient-7: linear-gradient(-47deg, #8731E8 0%, #4528DC 100%);
+$gradient-8: linear-gradient(45deg, #6CE01C 0%, #0175CD 100%);
+$gradient-9: linear-gradient(45deg, #8448ff 0%, #21007b 80%);
+$gradient-10: linear-gradient(45deg, #ff4bc4 0%, #375aeb 66%, #2b5bed 100%);
+$gradient-11: linear-gradient(180deg, #64d828 20%, rgba(1,205,105,0) 120%);
+
+
+ 
+//border-color
+$border-white: #ffffff !default;
+$border-white-bg: rgba(255, 255, 255, .20) !default;
+$border-orange: #ea4a27 !default;
+$border-green: #1BDD69;
+$border-green-200: #F1FFF7 !default;
+$border-light: #e1e5e9 !default;
+$border-light-2: #ededed !default;
+$border-light-3: #E2E6EA !default;
+$border-light-4: #818992 !default;
+$border-light-5: #E1ECFF !default;
+$border-light-6: #EEF0F2 !default;
+$border-light-7: #E0E8F7 !default;
+$border-dark-bg: rgba(45, 49, 54, 0.9) !default;
+$border-black-bg: rgba(0, 0, 0, .06) !default;
+$border-dark: #2f3640 !default;
+$border-dark-1: #707070 !default;
+$border-dark-2: #454A52 !default;
+$border-dark-3: #3c4047 !default;
+$border-dark-4: #3A414C !default;
+$border-dark-5: #30353C !default;
+
+ 
+//  cta color
+$cta-color-1: $color-yellow;
+$cta-color-2: $color-orange;
+
+// theme data attribute
+// =============================================================
+$theme-light: "[data-appearance="light"]" !default;
+$theme-dark: "[data-appearance="dark"]" !default;
+$theme-green: "[data-appearance="green"]" !default;
+ 
+// base font settings
+// =============================================================
+$base-unit: 16 !default;
+$base-line-height: 1rem !default;
+ 
+// fonts family
+// =============================================================
+$font-heading: 'Roboto', sans-serif !default;
+$font-body: 'Roboto', sans-serif !default;
+ 
+// font family all
+// =============================================================
+$font-all: $font-body !default;
+ 
+// font Size
+// =============================================================
+$h1-font-size: rem(66) !default;
+$h2-font-size: rem(56) !default;
+$h3-font-size: rem(46) !default;
+$h4-font-size: rem(38) !default;
+$h5-font-size: rem(24) !default;
+$h6-font-size: rem(20) !default;
+$body-font-size: rem(17) !default;
+
+// font weight
+// =============================================================
+$h1-font-weight: 300 !default;
+$h2-font-weight: 300 !default;
+$h3-font-weight: 300 !default;
+$h4-font-weight: 600 !default;
+$h5-font-weight: 400 !default;
+$h6-font-weight: 400 !default;
+$body-font-weight: 400 !default;
+
+// font line height
+// =============================================================
+$h1-line-height: 1.18 !default;
+$h2-line-height: 1.22 !default;
+$h3-line-height: 1.25 !default;
+$h4-line-height: 1.25 !default;
+$h5-line-height: 1.55 !default;
+$h6-line-height: 1.55 !default;
+$body-line-height: 1.75 !default;
+ 
+// Spacer
+// =============================================================
+$standard-space: $base-line-height * 8.125 !default;//(130)
+ 
+// Box layout width
+// =============================================================
+$box-layout-width: 1366px !default;
+
+
+

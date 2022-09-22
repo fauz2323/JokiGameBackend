@@ -1,0 +1,154 @@
+// /**--------- FONT FAMILY --------*/
+@mixin  font-face($font) {
+  font-family: $font;
+}
+
+// Example of usage
+//  h1{
+//   @include font-face('Roboto', sans-serif;);
+// }
+
+
+// /**--------- START OF MEDIA QUERY --------*/
+@mixin breakpoint-min($bp, $rule: min-width) {
+  @media only screen and (#{$rule}: map-get($breakpoints, $bp)) {
+    @content;
+  }
+}
+
+@mixin breakpoint-max($bp, $rule: max-width) {
+  @media only screen and (#{$rule}: map-get($breakpoints, $bp) - 1) {
+    @content;
+  }
+}
+
+
+//Example of usage
+// h1{
+//   @include breakpoint-min(sm){
+//     color: #000;
+//   }
+// }
+
+
+
+
+//--------- START OF ABSOLUTE POSITIONING --------//(related mixins-backgruound holder)
+@mixin  pos-abs($top, $right, $bottom, $left) {
+  position: absolute !important;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;  
+
+}
+
+
+// Example of usage
+// .class-name{
+//  @include pos-abs(100px, auto, 50px, auto);
+//}
+
+// Compiled css
+// .class-name{
+//   position: absolute;
+//   top: 100px;
+//   right: auto;
+//   bottom: 50px;
+//   left: auto;
+// }
+
+
+// /**--------- START OF PLACEHOLDER TEXT COLOR --------*/
+@mixin  input-placeholder {
+  &.placeholder {
+    @content;
+  }
+  &:-moz-placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    @content;
+  }
+  &:-ms-input-placeholder {
+    @content;
+  }
+  &::-webkit-input-placeholder {
+    @content;
+  }
+}
+
+//Example of usage
+//  input{
+//     @include  input-placeholder{
+//       color: #333333;
+//     }
+//  }
+
+
+
+
+// /**--------- Start OF Direction Mixin--------*/
+$dir: ltr !default;
+
+// Default $dir if not valid
+@if $dir !=ltr and $dir !=rtl {
+  $dir: ltr;
+}
+
+@function ltr($if, $else: null) {
+  @if $dir !=rtl {
+    @return $if;
+  }
+
+  @else {
+    @return $else;
+  }
+}
+
+@function rtl($if, $else: null) {
+  @return ltr($else, $if);
+}
+
+$left: ltr(left, right);
+$right: ltr(right, left);
+
+@function dir-values($values) {
+  @if $dir==rtl and length($values)==4 {
+    // Reorder right and left positions in list
+    @return nth($values, 1) nth($values, 4) nth($values, 3) nth($values, 2);
+  }
+
+  @else {
+    @return $values;
+  }
+}
+
+@mixin ltr {
+  @if $dir !=rtl {
+    @content;
+  }
+}
+
+@mixin rtl {
+  @if $dir==rtl {
+    @content;
+  }
+}
+
+
+//  EXAMPLE OF USAGE:
+
+// section {
+//     // define here inline your rtl conditions
+//     margin-#{$left}: 10px;
+//     @include ltr {
+//     float: left;
+
+//     }
+//     @include rtl {
+//       float: right;
+//     }
+//   }
+
+

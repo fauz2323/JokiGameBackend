@@ -1,0 +1,33 @@
+
+.switchable{
+    &__image{
+        width: 100%;
+        @include breakpoint-max(lg){
+            text-align: center;
+            margin-bottom: rem(50);
+        }
+        
+        @include breakpoint-min(lg){
+            position: relative;
+            width: 630px;
+            left: -150px;
+        }
+        @include breakpoint-min(xl){
+            width: 100%;
+        }
+    }
+    &__content{
+        max-width: rem(540);
+        @include breakpoint-max(lg){
+            text-align: center;
+            margin: 0 auto;
+        }
+        @include breakpoint-max(sm){
+           h2{
+               font-size: rem(30);
+           }
+        }
+    }
+
+
+}

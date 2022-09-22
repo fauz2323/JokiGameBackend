@@ -1,0 +1,279 @@
+/** ================ Theme color,background ================ **/
+//background
+%bg-primary{
+    .theme-gradient-1 &{
+        background: $gradient-1;
+        &.btn,
+        &.btn-media,
+        &.pricing-btn,
+        &.card--focused::before,
+        &.slider-button,
+        &.arrowBtn:hover,
+        &.navigation__transparent.sticky-nav{
+            background: $color-primary;
+        }
+    }
+    .theme-gradient-2 &{
+        background: $gradient-2;
+        &.btn,
+        &.btn-media,
+        &.pricing-btn,
+        &.card--focused::before,
+        &.slider-button,
+        &.arrowBtn:hover,
+        &.navigation__transparent.sticky-nav{
+            background: #6e51d6;
+        }
+    }
+    .theme-gradient-3 &{
+        background: $gradient-8;
+        &.user-experience{
+            background: $gradient-6;
+        }
+        &.newsfoot{
+            background: $gradient-11;
+        }
+
+        &.btn,
+        &.btn-media,
+        &.slider-button,
+        &.arrowBtn:hover,
+        &.icon-group,
+        &.navigation__transparent.sticky-nav{
+            background: $color-green-300;
+        }
+
+        
+    }
+    
+    .theme-gradient-3 & {
+         &.icon-group-list:hover {
+             background: tomato;
+        }
+    }
+
+
+
+    .theme-gradient-4 &{
+        background: $gradient-9;
+        &.btn,
+        &.btn-media,
+        &.slider-button,
+        &.arrowBtn:hover,
+        &.navigation__transparent.sticky-nav{
+            background:$color-purple-dark;
+        }
+    }
+    .theme-gradient-5 &{
+        background: $gradient-10;
+        &.btn,
+        &.btn-media,
+        &.slider-button,
+        &.arrowBtn:hover,
+        &.navigation__transparent.sticky-nav{
+            background: #3f5ae3;
+        }
+    }
+    .theme-gradient-6 &{
+         background: $gradient-orange;
+        &.btn,
+        &.btn-media,
+        &.slider-button,
+        &.arrowBtn:hover,
+        &.navigation__transparent.sticky-nav{
+            background: $color-orange;
+        }
+    }
+    .theme-green &{
+        background: $color-green;
+    }
+    .theme-orange &{
+        background: $color-orange;
+
+        &.btn-bg--primary,
+         &.card--focused::before{
+            background: $cta-bg-2;
+        }
+    }
+    .theme-blue &{
+        background: $color-primary;
+    }
+    .theme-violet &{
+        background: $color-violet;
+    }
+    .theme-orange-light &{
+        background: $color-orange-light;
+    }
+    .theme-firoza &{
+        background: $color-firoza;
+    }
+    
+}
+
+//theme outline bg
+.theme{
+    &-orange {
+        .btn-bg-hover--primary{
+            &:after,
+            &:before {
+                background: $cta-bg-2;
+            }
+        }
+    }
+}
+//color
+%color-primary{
+    .theme-blue &{
+        color: $color-primary;
+        &.list-group-item-action.active{
+            color: $color-primary;
+        }
+    }
+    .theme-orange &{
+        color: $color-orange;
+        &.list-group-item-action.active{
+            color: $color-orange;
+        }
+    }
+    .theme-green &{
+        color: $color-green;
+        &.list-group-item-action.active{
+            color: $color-green;
+        }
+    }
+    .theme-violet &{
+        color: $color-violet;
+        &.list-group-item-action.active{
+            color: $color-violet;
+        }
+    }
+    .theme-orange-light &{
+        color: $color-orange-light;
+        &.list-group-item-action.active{
+            color: $color-orange-light;
+        }
+    }
+    .theme-firoza &{
+        color: $color-firoza;
+        &.list-group-item-action.active{
+            color: $color-firoza;
+        }
+    }
+    .theme-gradient-1 &{
+        color: $color-primary;
+        &.list-group-item-action.active{
+            color: $color-primary;
+        }
+    }
+    .theme-gradient-2 &{
+        color: $color-purple-light;
+        &.list-group-item-action.active{
+            color: $color-purple-light;
+        }
+    }
+    .theme-gradient-3 &{
+        color: $color-green-300;
+        &.list-group-item-action.active{
+            color: $color-green-300;
+        }
+    }
+    .theme-gradient-4 &{
+       color: $color-purple-dark;
+       &.list-group-item-action.active{
+        color: $color-purple-light;
+    }
+    }
+    .theme-gradient-5 &{
+        color: $color-purple;
+        &.list-group-item-action.active{
+            color: $color-purple;
+        }
+    }
+    .theme-gradient-6 &{
+        color: $color-orange;
+        &.list-group-item-action.active{
+            color: $color-orange;
+        }
+    }
+
+}
+
+//btn border color
+%btn-border-color-primary{
+    .theme-blue &{
+        border-color: $color-primary;
+    }
+    .theme-orange &{
+        border-color: $color-orange;
+    }
+    .theme-green &{
+        border-color: $color-green;
+    }
+    .theme-violet &{
+        border-color: $color-violet;
+    }
+    .theme-orange-light &{
+        border-color: $color-orange-light;
+    }
+    .theme-firoza &{
+        border-color: $color-firoza;
+    }
+    .theme-gradient-1 &{
+        border-color: $color-primary;
+    }
+    .theme-gradient-2 &{
+        border-color: $color-purple-light;
+    }
+    .theme-gradient-3 &{
+        border-color: $color-green-300;
+    }
+    .theme-gradient-4 &{
+       border-color: $color-purple-dark;
+    }
+    .theme-gradient-5 &{
+        border-color: $color-purple;
+    }
+    .theme-gradient-6 &{
+        border-color: $color-orange;
+    }
+}
+
+//fill
+%fill-primary{
+    .theme-blue &{
+        fill: $color-primary;
+    }
+    .theme-orange &{
+        fill: $color-orange;
+    }
+    .theme-green &{
+        fill: $color-green;
+    }
+    .theme-violet &{
+        fill: $color-violet;
+    }
+    .theme-orange-light &{
+        fill: $color-orange-light;
+    }
+    .theme-firoza &{
+        fill: $color-firoza;
+    }
+    .theme-gradient-1 &{
+        fill: $color-primary;
+    }
+    .theme-gradient-2 &{
+        fill: $color-purple-light;
+    }
+    .theme-gradient-3 &{
+        fill: $color-green-300;
+    }
+    .theme-gradient-4 &{
+       fill: $color-purple-dark;
+    }
+    .theme-gradient-5 &{
+        fill: $color-purple;
+    }
+    .theme-gradient-6 &{
+        fill: $color-orange;
+    }
+}

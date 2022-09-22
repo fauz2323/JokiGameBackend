@@ -1,0 +1,203 @@
+/**! --------------- features v1 -------------- **/
+.features{
+    .feature-title{
+        margin-bottom: rem(10);
+    }
+
+    &--v1{
+        .feature{
+            
+            @include breakpoint-max(md){
+                max-width: rem(300);
+                margin: 0 auto;
+            }
+        }
+        .feature-icon{
+            i{
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        }
+    }
+
+    &--v2{
+        ul {
+            counter-reset: section;
+
+            > li{
+                    max-width: rem(480);
+            }
+            span {
+                border-width: 3px;
+                border-style: solid;
+                @extend .border-color-light--2  ;
+                width: 66px;
+                height: 66px;
+                position: relative;
+                border-radius: rem(100);
+                -ms-flex: 0 0 65px;
+                flex: 0 0 65px;
+                &:after {
+                    position: absolute;
+                    content: counter(section);
+                    counter-increment: section;
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: rem(28);
+                    font-weight: 400;
+                    font-family: 'Roboto', sans-serif;
+                    @extend .text-color--700;
+                }
+            }
+        }
+
+        .feature-media{
+            position: relative;
+            z-index: 1;
+            @include breakpoint-max(md){
+                bottom: rem(-50);
+            }
+            @include breakpoint-min(md){
+                top: -10px;
+                left: 0;
+                position: absolute;
+            }
+            @include breakpoint-min(xl){
+                left: rem(-20);
+            }
+            @media only screen and (max-width: 992px) and (min-width: 1199px){
+                top: rem(100);
+                left: 0;
+            }
+            img{
+                @include breakpoint-max(xl){
+                    width: rem(400);
+                    height: auto;
+                }
+                @include breakpoint-max(md){
+                    width: 100%;
+                }
+            }
+            &:before{
+                background-image: url(.././/..///img/layout/triangles-1.1.svg);
+                background-repeat: no-repeat;
+                position: absolute;
+                content: "";
+                left: 0;
+                top: 0;
+                z-index: -1;
+                height: rem(180);
+                width: rem(180);
+                transform: translate(20%, 65%);
+                @include breakpoint-max(md){
+                    display: none;
+                }
+                @include breakpoint-min(md){
+                    height: 100%;
+                    width: 100%;
+                    transform: translate(-10%, 28%);
+                }
+            }
+            
+            &--2{
+                position: relative;
+                z-index: 1;
+                right: rem(25);
+                img{
+                    @include breakpoint-max(xl){
+                        width: rem(400);
+                        height: auto;
+                    }
+                    @include breakpoint-max(md){
+                        width: 100%;
+                    }
+                }
+                @include breakpoint-max(md){
+                    bottom: rem(-50);
+                }
+                @include breakpoint-min(md){
+                    top: rem(50);
+                    right: rem(85);
+                }
+                @include breakpoint-min(xl){
+                    right: rem(170);
+                }
+                &:before{
+                    background-image: url(.././/..///img/layout/triangles-2.1.svg);
+                    background-repeat: no-repeat;
+                    position: absolute;
+                    content: "";
+                    height: 205px;
+                    width: 205px;
+                    right: 0;
+                    top: 0;
+                    z-index: -1;
+                    @include breakpoint-max(md){
+                        display: none;
+                    }
+                    @include breakpoint-min(md){
+                        transform: translate(48%, 50%);
+                    }
+                    @include breakpoint-min(lg){
+                        transform: translate(15%, 102%);
+                    }
+                    @include breakpoint-min(xl){
+                        transform: translate(87%, 102%);
+                    }
+                }
+            }
+        }
+    }
+
+    &--v3{
+        .feature-list{
+            &:hover{
+                span{
+                    i{
+                        color: $color-dark-600;
+                    }
+                }
+            }
+        }
+        span{
+            i{
+                @extend .transition-default;
+                color: $color-light-gray-200;
+            }
+        }
+    }
+    &--v3,
+    &--v4{
+        .feature-list{
+
+            span{
+                i{
+                    margin-top: rem(8);
+                }
+            }
+        }
+    }
+    &--v4{
+        h4{
+            line-height: rem(30)
+        }
+    }
+
+    &--v5{
+        .feature{ 
+            &:hover{
+                background: $color-white;
+                @extend .rounded--10;
+                @extend .box-shadow--12;
+                i{
+                    @extend %color-primary;
+                }
+            }
+        }
+    }
+}
+
+

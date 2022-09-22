@@ -1,0 +1,112 @@
+.cards{
+    .list-group{
+        li{
+            font-size: rem(16);
+            line-height: 34px;
+            color:  $color-dark-700;
+            font-weight: 400;
+        }
+    }
+    .btn{
+        @include breakpoint-max(lg){
+            padding: rem(15) rem(15);
+        }
+    }
+}
+.card{
+    background: 0;
+    &-body{
+        padding: 0;
+    }
+    &--v1{
+        .badge{
+            @extend .bg-light-gray--300;
+            @extend .rounded--full;
+            padding: rem(6) rem(16); 
+        }
+    }
+    
+    &--v2{
+        .card{
+            &--focused {          
+                position: relative;
+                z-index: 1;
+                border-width: 3px;
+                // margin-top: -18px;
+                &::after{
+                    position: absolute;
+                    content: "";
+                    background: $color-white;
+                    right: 5px;
+                    top: 105px;
+                    width: 33px;
+                    height: 31px;
+                    transform: rotate(45deg);
+                    z-index: -1;
+                    @include breakpoint-min(lg){
+                        right: rem(23);
+                        top: rem(118);
+    
+                    }
+    
+                }
+                &::before{
+                    position: absolute;
+                    content: "Best choice";
+                    z-index: -1;
+                    @extend %bg-primary;
+                    right: rem(0);
+                    top: rem(0);
+                    width: rem(130);
+                    height: rem(35);
+                    color: $color-white;
+                    font-size: rem(14);
+                    font-weight: 700;
+                    display: flex;
+                    align-items: center;
+                    transform: rotate(90deg);
+                    transform-origin: 54px 53px;
+                    padding-left: 12px;
+                    text-transform: uppercase;
+                }
+            }
+        }
+        .btn{
+            @include breakpoint-max(lg){
+                font-size: rem(16);
+            }
+        }
+    }
+    
+    &--v3{
+        .category-links a{
+            &:hover{
+                color: darken($color-dark-400, 50%);
+            }
+        }
+        .card-title {
+            &:hover{
+                color: lighten($color-dark-700, 20%);
+            }
+        }
+
+        .card-list{
+            @include breakpoint-min(lg){
+                max-width: rem(425);
+                margin-left: rem(35);
+            }
+            h5{
+                a{
+                    &:hover{
+                        color: lighten($color-dark-700, 20%);
+                    }
+                }
+            }
+        }
+    }
+}
+.card-value--focused{
+    display: none;
+}
+
+

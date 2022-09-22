@@ -1,0 +1,158 @@
+// base font settings
+// =============================================================
+$base-unit: 16 !default;
+$base-line-height: 1rem !default;
+ 
+// fonts family
+// =============================================================
+$font-heading: 'Roboto', sans-serif !default;
+$font-body: 'Roboto', sans-serif !default;
+ 
+// font family all
+// =============================================================
+$font-all: $font-body !default;
+ 
+// font Size
+// =============================================================
+$h1-font-size: rem(66) !default;
+$h2-font-size: rem(56) !default;
+$h3-font-size: rem(46) !default;
+$h4-font-size: rem(38) !default;
+$h5-font-size: rem(24) !default;
+$h6-font-size: rem(20) !default;
+$body-font-size: rem(17) !default;
+
+// font weight
+// =============================================================
+$h1-font-weight: 300 !default;
+$h2-font-weight: 300 !default;
+$h3-font-weight: 300 !default;
+$h4-font-weight: 600 !default;
+$h5-font-weight: 400 !default;
+$h6-font-weight: 400 !default;
+$body-font-weight: 400 !default;
+
+// font line height
+// =============================================================
+$h1-line-height: 1.18 !default;
+$h2-line-height: 1.22 !default;
+$h3-line-height: 1.25 !default;
+$h4-line-height: 1.25 !default;
+$h5-line-height: 1.55 !default;
+$h6-line-height: 1.55 !default;
+$body-line-height: 1.75 !default;
+ 
+
+/**! ----- font family init ---- **/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+
+  font-weight: 400;
+  font-family: $font-heading;
+  @extend %heading-text-color;
+}
+
+h1 {
+  @extend .h1-font;
+}
+
+h2 {
+  @extend .h2-font;
+}
+
+h3 {
+  @extend .h3-font;
+
+}
+
+h4 {
+  @extend .h4-font;
+  color: $color-dark-700;
+}
+
+h5 {
+  @extend .h5-font;
+}
+
+h6 {
+  @extend .h6-font;
+}
+
+p {
+  font-family: $font-body;
+  font-size: $body-font-size;
+  font-weight: $body-font-weight;
+  line-height: $body-line-height;
+  color: $color-dark-400;
+
+}
+
+blockquote {
+  @extend .h6-font;
+  font-style: italic;
+
+  h4 {
+    line-height: 3rem;
+  }
+
+  h5 {
+    line-height: 2.8rem;
+  }
+} 
+
+/**! ----- font Setting (size & line height, spacing etc) ---- **/
+.h1-font {
+    font-size: $h3-font-size;
+    line-height: $h3-line-height;
+    font-weight: $h1-font-weight;
+    @include breakpoint-min(md) {
+      font-size: $h1-font-size;
+      line-height: $h1-line-height;
+    }
+}
+ 
+.h2-font {
+    font-size: $h3-font-size;
+    line-height: $h3-line-height;
+    font-weight: $h2-font-weight;
+    @include breakpoint-min(md) {
+      font-size: $h2-font-size;
+      line-height: $h2-line-height;
+    }
+  }
+  
+.h3-font {
+    font-size: $h4-font-size;
+    line-height: $h4-line-height;
+    font-weight: $h3-font-weight;
+    @include breakpoint-min(md) {
+      font-size: $h3-font-size;
+      line-height: $h3-line-height;
+    }
+}
+.h4-font {
+  font-size: $h4-font-size;
+  line-height: $h4-line-height;
+  font-weight: $h4-font-weight;
+}
+.h5-font {
+  font-size: $h5-font-size;
+  line-height: $h5-line-height;
+  font-weight: $h5-font-weight;
+}
+.h6-font {
+  font-size: $h6-font-size;
+  line-height: $h6-line-height;
+  font-weight: $h6-font-weight;
+}
+.body-font {
+  font-size: $body-font-size;
+  line-height: $body-line-height;
+  font-weight: $body-font-weight;
+
+}
+  

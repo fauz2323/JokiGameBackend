@@ -1,0 +1,148 @@
+/*------------------------
+	icons
+-------------------------*/
+@function unicode($str) {
+  @return unquote("\"\\#{$str}\"");
+}
+
+$nc-app: unicode(ea01);
+$nc-apple: unicode(ea02);
+$nc-chart-bar-33: unicode(ea03);
+$nc-chat-46: unicode(ea04);
+$nc-code-editor: unicode(ea05);
+$nc-credit-locked: unicode(ea06);
+$nc-delivery-fast: unicode(ea07);
+$nc-favourite-31: unicode(ea08);
+$nc-heart-2-2: unicode(ea09);
+$nc-heart-2: unicode(ea0a);
+$nc-ic_android_48px: unicode(ea0b);
+$nc-layers-3-2: unicode(ea0c);
+$nc-layers-3: unicode(ea0d);
+$nc-minimal-left: unicode(ea0e);
+$nc-minimal-right: unicode(ea0f);
+$nc-money-time: unicode(ea10);
+$nc-p-heart: unicode(ea11);
+$nc-p-system-update: unicode(ea12);
+$nc-responsive: unicode(ea13);
+$nc-send: unicode(ea14);
+$nc-storage: unicode(ea15);
+$nc-stre-right: unicode(ea16);
+$nc-tail-left: unicode(ea17);
+$nc-tail-right: unicode(ea18);
+$nc-touch-id: unicode(ea19);
+$nc-triangle-right-17: unicode(ea1a);
+$nc-watch-circle: unicode(ea1b);
+$nc-web-design: unicode(ea1c);
+
+.nc-app::before {
+  content: $nc-app;
+}
+
+.nc-apple::before {
+  content: $nc-apple;
+}
+
+.nc-chart-bar-33::before {
+  content: $nc-chart-bar-33;
+}
+
+.nc-chat-46::before {
+  content: $nc-chat-46;
+}
+
+.nc-code-editor::before {
+  content: $nc-code-editor;
+}
+
+.nc-credit-locked::before {
+  content: $nc-credit-locked;
+}
+
+.nc-delivery-fast::before {
+  content: $nc-delivery-fast;
+}
+
+.nc-favourite-31::before {
+  content: $nc-favourite-31;
+}
+
+.nc-heart-2-2::before {
+  content: $nc-heart-2-2;
+}
+
+.nc-heart-2::before {
+  content: $nc-heart-2;
+}
+
+.nc-ic_android_48px::before {
+  content: $nc-ic_android_48px;
+}
+
+.nc-layers-3-2::before {
+  content: $nc-layers-3-2;
+}
+
+.nc-layers-3::before {
+  content: $nc-layers-3;
+}
+
+.nc-minimal-left::before {
+  content: $nc-minimal-left;
+}
+
+.nc-minimal-right::before {
+  content: $nc-minimal-right;
+}
+
+.nc-money-time::before {
+  content: $nc-money-time;
+}
+
+.nc-p-heart::before {
+  content: $nc-p-heart;
+}
+
+.nc-p-system-update::before {
+  content: $nc-p-system-update;
+}
+
+.nc-responsive::before {
+  content: $nc-responsive;
+}
+
+.nc-send::before {
+  content: $nc-send;
+}
+
+.nc-storage::before {
+  content: $nc-storage;
+}
+
+.nc-stre-right::before {
+  content: $nc-stre-right;
+}
+
+.nc-tail-left::before {
+  content: $nc-tail-left;
+}
+
+.nc-tail-right::before {
+  content: $nc-tail-right;
+}
+
+.nc-touch-id::before {
+  content: $nc-touch-id;
+}
+
+.nc-triangle-right-17::before {
+  content: $nc-triangle-right-17;
+}
+
+.nc-watch-circle::before {
+  content: $nc-watch-circle;
+}
+
+.nc-web-design::before {
+  content: $nc-web-design;
+}
+

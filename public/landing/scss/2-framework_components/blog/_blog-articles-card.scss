@@ -1,0 +1,15 @@
+.article{
+    .card{
+        border: 0;
+        &-body{
+            margin: rem(-50) rem(14) 0;
+        }
+        &-title{
+           h4{
+            &:hover{
+                color: lighten($color-dark-700, 10%);
+            }
+           }
+        }
+    }
+}

@@ -1,0 +1,13 @@
+.reviews{
+    .load-more{
+        font-size: rem(16);
+        font-weight: 500;
+        color: $color-dark-400;
+        border: 1px solid $border-light-3;
+        @extend .rounded--default;
+        padding: rem(12);
+        &:hover{
+            color: $color-dark-700;
+        }
+    }
+}

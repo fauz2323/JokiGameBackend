@@ -1,0 +1,82 @@
+.client-brand {
+    .logo-group{
+        &::before{
+            @include breakpoint-min(lg){
+             position: absolute;
+             content: "";
+             border-bottom: 1px solid $border-light-3;
+             bottom: 0;
+            }
+         }
+         &__img {
+            &:not(:last-child){
+                margin-right: rem(10);
+            }
+            &:not(:first-child){
+                margin-left: rem(10);
+            }
+            @include breakpoint-min(xl){
+                &:not(:last-child){
+                    margin-right: rem(25);
+                }
+                &:not(:first-child){
+                    margin-left: rem(25);
+                }
+
+            }
+            @include breakpoint-max(xl){
+                margin-bottom: rem(30);
+            }
+        }
+    }
+    &--v1{
+        .logo-group{
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            flex-wrap: wrap;
+            position: relative;
+            &::before{
+                @include breakpoint-min(lg){
+                    width: rem(100);
+                }
+               @include breakpoint-min(xl){
+                bottom: -60px;
+               }
+            }
+            &__img{
+                margin-right: rem(65);
+                &:last-child{
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+
+    &--v2{
+      
+        @include breakpoint-min(xl){
+            padding-bottom: rem(100);
+        }
+        .logo-group{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            @include breakpoint-min(lg){
+                justify-content: space-between;
+            }
+            &::before{
+                @include breakpoint-min(lg){
+                    width: 100%;
+                }
+                @include breakpoint-min(xl){
+                 bottom: -110px;
+                }
+             }
+        }
+    }
+    
+}
+

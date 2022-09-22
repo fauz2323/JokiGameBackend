@@ -1,0 +1,69 @@
+
+/** ================ Dark Theme ================ **/
+[data-appearance=dark]{
+    background: $color-dark-800;
+    h1,h2,h3,h4,h5,h6,
+    h5 a,
+    .facts li span,
+    .accordion--v1 .btn-header span,
+    .accordion--v1 .btn-header i,
+    .features--v2 ul span:after,
+    .newsletter--v2 .newsletter-features li,
+    .btn-outline,
+    .faq-contact,
+    .card--v2 .list-group li,
+    .card--v2 .pricing-btn,
+    .testimonial--v3 .testimonial-customer__name,
+    .footer--v3 .widget-title ,
+    .footer--v2 .copyright a,
+    .footer--v2 p,
+    .testimonial--v1 .section-title p,
+    .hero p,
+    .newsletter--v1 p,
+    .cta--v1 p{
+        color: $color-white;
+    }
+    p,
+    .featured--v1 h6{
+        color: $color-dark-400;
+    }
+    .footer--v2 .copyright a:hover{
+        color: darken($color-white, 20%);
+    }
+    .icon-bg::before{
+        color: #3D434C;
+    }
+    .features--v3 .feature-list:hover span i{
+        color: $color-gray-200;
+    }
+    .card--v2 .card--focused::after{
+        background: $color-dark;
+    }
+    .carosuel-slider--v3::before{
+        background: $color-dark-800;
+    }
+    .features--v2 ul span{
+        border-color: $border-dark-3;
+    }
+    .featured--v1 .logo-group::before,
+    .accordion--v1 .card-header h5 {
+        border-color: $border-dark-2;
+    }
+    .featured--v2 .logo-group::before {
+        border-color: $color-dark-900;
+    }
+    .card--v2 .card{
+        border-color: $border-dark-4;
+    }
+    .testimonial--v3 {
+        .carosuel-slider--v3 .slide {
+            .testimonial-content::before {
+                border-left-color: $border-dark;
+            }
+            blockquote {
+                border-color: $border-dark-4;
+            }
+        }
+    }
+   
+}

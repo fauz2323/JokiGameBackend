@@ -1,0 +1,94 @@
+/**! ----- Icon with Background ---- **/
+// MARKUP:
+// <span class="icon--lg">
+// <i class="nc-icon nc-p-system-update"></i>
+// </span>
+
+.icon{
+    &--xl{
+        height: rem(124);
+        width: rem(124);
+        font-size: rem(45);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        @extend .rounded--full;
+    }
+    &--lg{
+        font-size: rem(45);
+        height: rem(90);
+        width: rem(90);
+        flex: 0 0 rem(90);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &--md{
+        display: flex;
+        height: rem(79);
+        width: rem(79);
+        font-size: rem(35);
+        padding: rem(22) rem(22);
+        align-items: center;
+        justify-content: center;
+    }
+}
+.icon{
+    @include breakpoint-min(md){
+        &-bg{
+            position: relative;
+            &:before{
+              position: absolute;
+              content: "\ea16";
+              font-family: "vApp";
+              right: 0;
+              color: #E2E6EA;
+              font-size: 70px;
+              top: -6px;
+              margin-right: -50px;
+            }
+        }
+    }
+}
+
+/**! ----- Icon Font Size ---- **/
+.icon{
+    &--2x{
+        i{
+            font-size: rem(39);
+        }
+    }
+    &--3x{
+        i{
+            font-size: rem(66);
+        }
+    }
+    &--4x{
+        i{
+            font-size: rem(67);
+        }
+    }
+}
+
+/**! ----- Icon group ---- **/
+.icon-group{
+    display: flex;
+    flex-wrap: wrap;
+    a{
+        padding-right: rem(8);
+
+    }
+}
+
+/**! ----- Icon rounded ---- **/
+.icon-rounded{
+    i{
+        height: rem(24);
+        width: rem(24);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @extend .rounded--full;
+      
+    }
+}

@@ -1,0 +1,169 @@
+.content-block{
+    .overlap-image{
+        position: relative;
+    }
+    &--text{
+        margin-bottom: rem(40);
+        h3{
+            margin-bottom: rem(30);
+        }
+    }
+    &--v1{
+        .overlap-image{
+            &__secondary {
+                &[class*="pos-abs-top-right"]{
+                    top: -88px;
+                    @include breakpoint-min(lg){
+                        top: -100px;
+                        right: -38px;
+                    }
+                }
+            }
+        }
+    }
+
+    &--v2{
+        .svg{
+            @include breakpoint-max(xl){
+                display: none;
+            }
+            position: absolute;
+            left: -25px;
+            top: -120px;
+        }
+        .content-block{
+            &--top{
+                .overlap-image{
+                    @include breakpoint-min(xl){
+                        top: rem(20);
+                    }
+                }
+            }
+            &--bottom{
+                .overlap-image__secondary{
+                    &[class*="pos-abs-bottom-left"]{
+                    @include breakpoint-min(md){
+                    bottom: rem(45);
+                    left: rem(80);
+                    }
+                    @include breakpoint-min(lg){
+                    bottom: rem(0);
+                    left: rem(0);
+                    }
+                    @include breakpoint-min(xl){
+                    bottom: rem(45);
+                    left: rem(-45);
+                    }
+                    }
+                }
+            }
+        }
+    }
+
+    &--v3{
+        @include breakpoint-max(lg){
+            padding-top: rem(100);
+        }
+        @include breakpoint-max(md){
+            padding-top: rem(80);
+        }
+        .overlap-image{
+            @include breakpoint-min(lg){
+                margin-top: rem(-85);
+            }
+        }
+        .content-block{
+            &--top{
+            .overlap-image__secondary{
+                    &[class*="pos-abs-bottom-right"]{
+                        bottom: rem(75);
+                        right: rem(28);
+                        @include breakpoint-min(xl){
+
+                        }
+                    }
+                }
+            }    
+        }
+        .product-list,
+        .cart-list{
+            .product-title,
+            .cart-title{
+                color: $color-black;
+                font-size: rem(12);
+                font-weight: 700;
+                margin-bottom: rem(12);
+                &:hover{
+                    color: lighten($color-black, 30%);
+                }
+                span{
+                    color: $color-blue-500;
+                }
+            }
+            h6{
+                font-size: rem(12);
+                font-weight: 300;
+                color: $color-gray-400;
+                line-height: rem(15);
+                span{
+                    color: $color-blue-500;
+                }
+            }
+            .price{
+                color: $color-blue-500;
+                font-weight: 700;
+                margin-left: rem(40);
+            }
+        }
+        .cart-list{
+            background-color: $color-white;
+            @extend .rounded--8;
+            border: 1px solid #E4E4E4;
+            padding: rem(18) rem(25);
+            @extend .transition-default;
+            min-height: rem(100);
+            position: relative;;
+            opacity: .55;
+            &:hover{
+                opacity: 1;
+                border-color: $border-green;
+                &::before{
+                    opacity: 1;
+                }
+            }
+            &::before{
+                position: absolute;
+                content: "\f00c";
+                font-family: "Font Awesome 5 Free";
+                font-weight: 600;
+                color: $color-white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                right: rem(-1);
+                top: 0;
+                background-color: $color-green-300;
+                height: rem(20);
+                width: rem(20);
+                border-top-right-radius: 8px;
+                border-bottom-left-radius: 4px;
+                @extend .transition-default;
+                opacity: 0;
+            }
+            
+            .cart-img{
+                background: #FFEAB6;
+                @extend .rounded--full;
+                height: rem(48);
+                width: rem(48);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+
+    &--v4{
+        padding-bottom: rem(430);
+    }
+}

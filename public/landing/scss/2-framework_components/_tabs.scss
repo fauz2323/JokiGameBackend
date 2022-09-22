@@ -1,0 +1,39 @@
+.pricing-tab{
+    display: inline-flex;
+    vertical-align: middle;
+    position: relative;
+    padding: rem(5);
+    .pricing-btn {
+        padding: rem(16) rem(20);
+        font-size: rem(20);
+        font-weight: 500;
+        color: $color-dark-700;
+       
+      
+        @include breakpoint-min(sm){
+            padding: rem(16) rem(43);
+        }
+        &.btn-bg--primary {
+            color: $color-white;
+            span {
+                color: #FFE2DC;
+            }
+        }
+        span {
+            color: $color-dark-600;
+            font-size: rem(16);
+        }
+    }
+}
+[data-appearance=dark]{
+    .pricing-btn{
+        span{
+            color: #fff;
+        }
+        &.btn-bg--primary {
+            span {
+                color: #FFE2DC;
+            }
+        }
+    }
+}

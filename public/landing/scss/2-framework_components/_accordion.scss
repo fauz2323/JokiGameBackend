@@ -1,0 +1,53 @@
+.accordion {
+
+
+    /**! --------------- Accordion v1 -------------- **/
+    &--v1 {
+        .card {
+            border: 0;
+            background: 0;
+
+            &-header {
+                background: none;
+                border: 0;
+                padding: rem(0);
+                padding-bottom: rem(1);
+                text-align: left;
+
+                h5 {
+                    border-bottom: 1px solid #E2E6EA;
+                }
+            }
+
+            .btn:after,
+            .btn::before {
+                content: none;
+            }
+
+            .btn-header {
+                text-decoration: none;
+                padding: 0;
+
+                i {
+                    color: $color-dark-700;
+                    font-weight: 800;
+                    font-size: rem(14);
+                    margin-right: rem(10);
+                    transform: rotate(-90deg);
+                    transition: .3s;
+                }
+
+                &.collapsed {
+                    i {
+                        transform: rotate(0);
+                    }
+
+                }
+            }
+
+            &-body {
+                padding: 0;
+            }
+        }
+    }
+}

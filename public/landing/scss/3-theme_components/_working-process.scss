@@ -1,0 +1,12 @@
+.working-process{
+    .icon-bg{
+        &:hover{
+            &::before{
+                transform: translateX(20px);
+            }
+        }
+        &::before{
+            @extend .transition-default;
+        }
+    }
+}

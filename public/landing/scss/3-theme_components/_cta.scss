@@ -1,0 +1,58 @@
+/**! Cta v1,v2,v3 **/
+.cta {
+    &--v1 {
+        .background-holder {
+            background-size: 120px;
+            margin-top: -50px;
+
+            @include breakpoint-min(lg) {
+                background-size: 235px;
+                margin-top: rem(-100);
+            }
+        }
+
+        .cta-media {
+            position: relative;
+            z-index: 1;
+
+            &::before {
+                @include breakpoint-min(md) {
+                    position: absolute;
+                    content: "";
+                    right: 0;
+                    width: rem(256);
+                    height: rem(256);
+                    background-image: url(.././/../img/layout/circle-2.svg);
+                    background-repeat: no-repeat;
+                    opacity: 0.06;
+                    transform: translate(-54%, 2%);
+                    top: 0;
+                    z-index: -1;
+
+                }
+
+                @include breakpoint-min(lg) {
+                    transform: translate(8%, -30%);
+                }
+
+                @include breakpoint-min(xl) {
+                    transform: translate(28%, -30%);
+                }
+            }
+        }
+    }
+
+    &--v3 {
+        .svg {
+            @include breakpoint-max(xl) {
+                display: none;
+            }
+
+            position: absolute;
+            right: -70px;
+            top: -812px;
+
+            @include breakpoint-min(xl) {}
+        }
+    }
+}
