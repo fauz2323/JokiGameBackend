@@ -20,7 +20,8 @@
                 <h6 class="m-0 font-weight-bold text-primary">Edit List Game</h6>
             </div>
             <div class="card-body">
-                <form action="{{ route('edit-post', $data->id) }}" class="m-4" method="post">
+                <form action="{{ route('edit-post', $data->id) }}" class="m-4" method="post"
+                    enctype="multipart/form-data">
                     @csrf
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Game</label>
