@@ -24,8 +24,7 @@ class OrderApiController extends Controller
                     'status' => 'insufficient balance',
                 ], 201);
             }
-            $user->balance->balance = $user->balance->balance - $product->price;
-            $user->balance->save();
+
 
             $order = Order::create([
                 'product_id' => $request->id_product,
@@ -34,6 +33,9 @@ class OrderApiController extends Controller
                 'price' => $product->price,
                 'status' => 'menunggu',
             ]);
+
+            $user->balance->balance = $user->balance->balance - $product->price;
+            $user->balance->save();
 
             return response()->json([
                 'status' => 'success',
