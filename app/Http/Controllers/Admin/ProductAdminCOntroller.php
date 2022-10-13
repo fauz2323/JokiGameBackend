@@ -108,6 +108,8 @@ class ProductAdminCOntroller extends Controller
 
 
         if ($request->file('image')) {
+            $data->image()->delete();
+
             foreach ($request->file('image') as $key) {
                 $path = Storage::disk('public')->putFile('product', $key);
 
