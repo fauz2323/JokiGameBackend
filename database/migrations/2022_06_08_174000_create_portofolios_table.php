@@ -15,7 +15,7 @@ class CreatePortofoliosTable extends Migration
     {
         Schema::create('portofolios', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_product')->constrained('products');
+            $table->foreignId('id_product')->constrained('products')->onDelete('cascade');
             $table->string('name');
             $table->text('path');
             $table->timestamps();

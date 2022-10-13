@@ -37,12 +37,12 @@ class GameAdminController extends Controller
     public function delete($id)
     {
         $data = Game::find(Crypt::decrypt($id));
-        $check = $data->product->first();
+        // $check = $data->product->first();
 
-        if ($check) {
-        return redirect()->back()->with('err', 'error delete, game list has product');
+        // if ($check) {
+        // return redirect()->back()->with('err', 'error delete, game list has product');
 
-        }
+        // }
 
         $data->delete();
 

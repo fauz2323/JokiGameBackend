@@ -15,7 +15,7 @@ class CreateBalanceUsersTable extends Migration
     {
         Schema::create('balance_users', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('user_jokis');
+            $table->foreignId('user_id')->constrained('user_jokis')->onDelete('cascade');
             $table->double('balance');
             $table->timestamps();
         });

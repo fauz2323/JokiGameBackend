@@ -15,7 +15,7 @@ class CreateTopUpsTable extends Migration
     {
         Schema::create('top_ups', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_akun')->constrained('user_jokis');
+            $table->foreignId('id_akun')->constrained('user_jokis')->onDelete('cascade');
             $table->string('codeUniq');
             $table->string('total');
             $table->string('status');

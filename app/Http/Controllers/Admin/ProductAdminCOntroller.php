@@ -124,15 +124,15 @@ class ProductAdminCOntroller extends Controller
     {
 
         $data = Product::find(Crypt::decrypt($id));
-        $check = $data->portofolio->first();
-        $check_two = $data->review->first();
-        if ($check) {
-           return redirect()->back()->with('err','error delete, product has portofolio');
-        }
+        // $check = $data->portofolio->first();
+        // $check_two = $data->review->first();
+        // if ($check) {
+        //    return redirect()->back()->with('err','error delete, product has portofolio');
+        // }
 
-        if ($check_two) {
-            return redirect()->back()->with('err','error delete, product has review');
-         }
+        // if ($check_two) {
+        //     return redirect()->back()->with('err','error delete, product has review');
+        //  }
 
         $data->delete();
 
