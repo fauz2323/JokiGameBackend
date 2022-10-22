@@ -117,4 +117,13 @@ class AuthController extends Controller
             'message' => 'success',
         ], 200);
     }
+
+    public function getBalance()
+    {
+        $user = UserJoki::find(Auth::user()->id);
+
+        return response()->json([
+            'Balance' => floatval($user->balance->balance),
+        ], 200);
+    }
 }

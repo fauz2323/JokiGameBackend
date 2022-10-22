@@ -32,6 +32,7 @@ class OrderApiController extends Controller
                 'note' => $request->note,
                 'price' => $product->price,
                 'status' => 'menunggu',
+                'review' => 'not'
             ]);
 
             $user->balance->balance = $user->balance->balance - $product->price;
