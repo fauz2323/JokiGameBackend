@@ -27,8 +27,8 @@
                         <tr>
                             <th width='30px'>number</th>
                             <th>Game</th>
-                            <th>Aksi</th>
                             <th>Uploaded</th>
+                            <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
