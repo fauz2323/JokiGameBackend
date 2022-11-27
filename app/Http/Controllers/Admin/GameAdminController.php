@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Game;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Storage;
 use Yajra\DataTables\DataTables;
@@ -37,12 +38,6 @@ class GameAdminController extends Controller
     public function delete($id)
     {
         $data = Game::find(Crypt::decrypt($id));
-        // $check = $data->product->first();
-
-        // if ($check) {
-        // return redirect()->back()->with('err', 'error delete, game list has product');
-
-        // }
 
         $data->delete();
 
@@ -59,6 +54,7 @@ class GameAdminController extends Controller
         $path = Storage::disk('public')->putFile('filez', $request->file('image'));
 
         $data = Game::create([
+            'id_admin' => Auth::user()->id,
             'name' => $request->game,
             'ImagePath' => $path
         ]);

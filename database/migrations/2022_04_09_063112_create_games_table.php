@@ -15,6 +15,7 @@ class CreateGamesTable extends Migration
     {
         Schema::create('games', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('id_admin')->constrained('users')->onDelete('cascade');
             $table->string('name');
             $table->text('ImagePath');
             $table->timestamps();
