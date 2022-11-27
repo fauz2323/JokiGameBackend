@@ -19,4 +19,14 @@ class Game extends Model
     {
         return $this->hasMany(Product::class, 'game_id', 'id');
     }
+
+    /**
+     * Get the user that owns the Game
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'id_admin', 'id');
+    }
 }

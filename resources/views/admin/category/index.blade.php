@@ -28,7 +28,7 @@
                             <th width='30px'>number</th>
                             <th>Game</th>
                             <th>Aksi</th>
-
+                            <th>Uploaded</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -89,6 +89,10 @@
                     {
                         data: 'name',
                         name: 'name'
+                    },
+                    {
+                        data: 'user.name',
+                        name: 'user.name'
                     },
                     {
                         data: 'action',

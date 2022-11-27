@@ -20,7 +20,7 @@ class GameAdminController extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            $user = Game::all();
+            $user = Game::with('user')->get();
 
             return DataTables::of($user)
                 ->addIndexColumn()
