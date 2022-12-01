@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 
 class MessageUserController extends Controller
 {
-    public function sendMessage(Request $request)
+    public function createMessage(Request $request)
     {
         $user = UserJoki::find(Auth::user()->id);
         $message = $user->message()->create([

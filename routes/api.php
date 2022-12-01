@@ -64,7 +64,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::post('get-review', [OrderApiController::class, 'getReview']);
 
     //message
-    Route::post('send-message', [MessageUserController::class, 'sendMessage']);
+    Route::post('send-message', [MessageUserController::class, 'createMessage']);
     Route::get('get-message', [MessageUserController::class, 'getMessage']);
 
     //setting
