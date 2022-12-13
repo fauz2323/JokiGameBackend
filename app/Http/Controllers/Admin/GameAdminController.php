@@ -39,9 +39,13 @@ class GameAdminController extends Controller
     {
         $data = Game::find(Crypt::decrypt($id));
 
-        $data->delete();
+        if ($data) {
+            $data->delete();
 
-        return redirect()->back()->with('success', 'success delete list game');
+            return redirect()->back()->with('success', 'success delete list game');
+        }
+
+        return redirect()->back()->with('err', 'data not found');
     }
 
     public function add(Request $request)
